@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+.divide-line {
+  margin: 50px 10px;
+  // border: 1px solid #FF7F00;
+  border: none;
+  height: 1px;
+  background-color: $highlight-color;
+}
+
