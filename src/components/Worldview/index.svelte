@@ -55,24 +55,11 @@
     margin-bottom: 30px;
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    margin: 0px 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
 
   .container-content {
     display: flex;
     flex-direction: column;
     width: 60%;
-  }
-
-  .container-title {
-    color: $highlight-color;
-    font-size: 40px;
-    margin-bottom: 20px;
   }
 
   .container-paragraph {
@@ -89,6 +76,7 @@
 
     img {
       width: 100%;
+      border-radius: 10px;
     }
   }
   

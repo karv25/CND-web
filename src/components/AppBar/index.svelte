@@ -1,6 +1,8 @@
 <script lang="ts">
+  import * as animateScroll from 'svelte-scrollto'
   import Fa from 'svelte-fa'
   import { faFlag } from '@fortawesome/free-solid-svg-icons'
+  import { push, pop, replace } from 'svelte-spa-router'
 
   let navbarMenu = 'navbar_menu'
   let navbarIcons = 'navbar_icons'
@@ -8,6 +10,12 @@
   let toggleBtnActive = false
   function clickedToggleBtn() {
     toggleBtnActive = !toggleBtnActive
+  }
+
+  function toMint() {
+    push('/')
+    animateScroll.scrollTo({ element: '#mint' })
+    clickedToggleBtn()
   }
 </script>
 
@@ -18,11 +26,11 @@
   </div>
 
   <ul class="{toggleBtnActive === false ? 'navbar_menu' : 'navbar_menu_active'}">
-    <li><a href="/#/" on:click={clickedToggleBtn}>Home</a></li>
-    <li><a href="/#/about" on:click={clickedToggleBtn}>About</a></li>
-    <li><a href="/#/about" on:click={clickedToggleBtn}>About</a></li>
-    <li><a href="/#/about" on:click={clickedToggleBtn}>About</a></li>
-    <li><a href="/#/about" on:click={clickedToggleBtn}>About</a></li>
+    <li><a href="/#/" on:click="{clickedToggleBtn}">Home</a></li>
+    <li><div on:click="{toMint}">Mint</div></li>
+    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
+    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
+    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
   </ul>
 
   <ul class="{toggleBtnActive === false ? 'navbar_icons' : 'navbar_icons_active'}">
@@ -31,7 +39,7 @@
     <li><a href="/#/home"><Fa icon="{faFlag}" /></a></li>
   </ul>
 
-  <div class="navbar_toggleBtn" on:click="{() => toggleBtnActive = !toggleBtnActive}">
+  <div class="navbar_toggleBtn" on:click="{() => (toggleBtnActive = !toggleBtnActive)}">
     <Fa icon="{faFlag}" />
   </div>
 </nav>
