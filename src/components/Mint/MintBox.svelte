@@ -1,19 +1,56 @@
 <script lang="ts">
+  import { isConnect, myAddress, contractAddress, signer, totalSupply } from '@/stores'
+  import PConnect from '@/components/PolygonConnect/index.svelte'
+  import CNDV2Tabi from '@/data/abi/ClonesNeverDieV2Test.json'
+  import { ethers } from 'ethers'
+
+  let mintValue: any
+  let payableMatic: any
+  $: $myAddress
+
+  function calcPayValue(num: number) {
+    const oneValue = 0.03
+    payableMatic = oneValue * num
+    return payableMatic.toString()
+  }
+
+  async function mintClone() {
+    let overrides = {
+      value: ethers.utils.parseEther(calcPayValue(mintValue))
+    }
+    const contract = await new ethers.Contract($contractAddress, CNDV2Tabi, $signer)
+    const transaction = await contract.mintClone(mintValue, overrides)
+    await transaction.wait()
+    const ts = await contract.totalSupply()
+    $totalSupply = ts
+  }
 </script>
 
 <div class="mintbox">
   <div class="boxcontent">
     <div class="subtitle"><b>Your Address</b></div>
-    <input type="text" readonly value="0x6sd5f4s3d5f43sd5f43s5df43sd5f43sd5f4as565165165165da" />
+    <input type="text" readonly value="{$myAddress}" disabled="{!$isConnect}" />
     <div class="subtitle"><b>Number of mint limit (1-20)</b></div>
-    <input type="text" />
+    <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" />
     <div class="subcontent">
-      notice: 1 Clone = 30 MATIC 어쩌구 저쩌구 저쩌구notice: 1 Clone = 30 MATIC 어쩌구 저쩌구 저쩌구notice: 1 Clone = 30
-      MATIC 어쩌구 저쩌구 저쩌구
+      notice: 1 Clone = 30 MATIC
     </div>
-    <div class="subbtn">
-      <b> MINT </b>
+    <div class="subcontent">
+      Your MATIC balance: 
     </div>
+    {#if $isConnect && mintValue}
+      <div class="subbtn" on:click="{mintClone}">
+        <b> MINT </b>
+      </div>
+    {:else if $isConnect}
+      <div class="unactive-subbtn">
+        <b> MINT </b>
+      </div>
+    {:else}
+      <div class="subbtn">
+        <PConnect />
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -40,6 +77,15 @@
     margin-bottom: 25px;
   }
 
+  .unactive-subbtn {
+    width: 100%;
+    background-color: lightgray;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
   .subbtn {
     width: 100%;
     background-color: $highlight-color;
