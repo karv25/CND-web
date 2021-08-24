@@ -1,16 +1,16 @@
-# sadcat-interface
-The sadcat-interface is an interface that interacts with the sadcat finance contract.
+# CND-web
+Clones never die webpage
 
 ### dev mode
 ```zsh
-cd sadcat-interface
+cd CND-web
 npm i
 npm run dev
 ```
 
 ### gh-pages deploy
 ```zsh
-cd sadcat-interface
+cd CND-web
 npm i
 npm run deploy
 ```
