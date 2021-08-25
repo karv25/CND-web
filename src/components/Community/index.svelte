@@ -3,8 +3,8 @@
 </script>
 
 <div class="container">
+  <div class="container-title">Community</div>
   <div class="container-content">
-    <div class="container-title">Community</div>
   </div>
 </div>
 

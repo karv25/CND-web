@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { isConnect, myAddress, contractAddress, signer, totalSupply } from '@/stores'
+  import { isConnect, myAddress, contractAddress, signer, totalSupply, myBalance, cost } from '@/stores'
   import PConnect from '@/components/PolygonConnect/index.svelte'
   import CNDV2Tabi from '@/data/abi/ClonesNeverDieV2Test.json'
   import { ethers } from 'ethers'
 
   let mintValue: any
   let payableMatic: any
+
   $: $myAddress
 
   function calcPayValue(num: number) {
@@ -32,11 +33,12 @@
     <input type="text" readonly value="{$myAddress}" disabled="{!$isConnect}" />
     <div class="subtitle"><b>Number of mint limit (1-20)</b></div>
     <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" />
+    <div class="subcontent">notice: 1 Clone = 30 MATIC</div>
     <div class="subcontent">
-      notice: 1 Clone = 30 MATIC
+      Your MATIC balance: {$myBalance}
     </div>
     <div class="subcontent">
-      Your MATIC balance: 
+      Cost: {$cost}
     </div>
     {#if $isConnect && mintValue}
       <div class="subbtn" on:click="{mintClone}">

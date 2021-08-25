@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onDestroy } from 'svelte'
   import { ethers } from 'ethers'
-  import { isConnect, myAddress, provider, signer } from '@/stores'
+  import { isConnect, myAddress, myBalance, provider, signer } from '@/stores'
   const ethereum: any | undefined = (window as any).ethereum
 
   onDestroy(() => {
@@ -54,15 +54,21 @@
     $provider = new ethers.providers.Web3Provider(ethereum)
     $signer = $provider.getSigner()
     await getAddress()
+    await getBalance()
   }
 
   async function getAddress() {
     $myAddress = await $signer.getAddress()
   }
 
+  async function getBalance() {
+    $myBalance = ethers.utils.formatEther(await $provider.getBalance($myAddress))
+  }
+
   function changed() {
     ethereum.on('accountsChanged', async () => {
       await getAddress()
+      await getBalance()
     })
   }
 

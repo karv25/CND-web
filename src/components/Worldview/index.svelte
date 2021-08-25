@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<img class="banner" src="https://dummyimage.com/1600x1000.jpg?text=main%20banner" alt="main-banner" />
+<img class="banner" src="/assets/main-banner.jpeg" alt="main-banner" />
 
 <div class="container">
   <div class="container-content">
@@ -39,11 +39,10 @@
   </div>
 
   <div class="container-image">
-    <img src="/assets/null-nft.jpg" alt="King" />
-    <div>
-      이미지 설명
-      <br />
-      V1 Opensea link
+    <img class="sub-image" src="/assets/null-nft.jpg" alt="NULL" />
+    <div class="subtitle">King and God of Clones #Null</div>
+    <div class="subcontent">
+      <a class="link" href="https://opensea.io/collection/clones-never-die">Opensea CxNxD V1 컬랙션 보러가기</a>
     </div>
   </div>
 </div>
@@ -54,7 +53,6 @@
     width: 100%;
     margin-bottom: 30px;
   }
-
 
   .container-content {
     display: flex;
@@ -79,7 +77,14 @@
       border-radius: 10px;
     }
   }
-  
+
+  .sub-image {
+    margin-bottom: 10px;
+  }
+
+  .link {
+    color: $highlight-color;
+  }
 
   @media screen and (max-width: 768px) {
     .container-content {
