@@ -35,6 +35,7 @@
   hr {
     border: none;
     height: 10px;
+    margin: 50px 0px;
     background-color: $highlight-color;
   }
 
@@ -69,7 +70,7 @@
   }
 
   .footer-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
   }
 
@@ -104,6 +105,8 @@
 
     .footer-logo-container {
       width: 100%;
+      text-align: center;
+      margin-bottom: 70px;
     }
     .footer-content {
       width: 100%;

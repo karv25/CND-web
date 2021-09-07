@@ -62,8 +62,6 @@
   </div>
 </div>
 
-<hr class="divide-line" />
-
 <style lang="scss">
   .container-content {
     display: flex;

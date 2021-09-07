@@ -28,8 +28,8 @@
   <ul class="{toggleBtnActive === false ? 'navbar_menu' : 'navbar_menu_active'}">
     <li><a href="/#/" on:click="{clickedToggleBtn}">Home</a></li>
     <li><div on:click="{toMint}">Mint</div></li>
-    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
-    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
+    <li><a href="/#/wallet" on:click="{clickedToggleBtn}">Wallet</a></li>
+    <li><a href="/#/gallery" on:click="{clickedToggleBtn}">Gallery</a></li>
     <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
   </ul>
 

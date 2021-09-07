@@ -1,5 +1,6 @@
 <script lang="ts">
   import Worldwide from '@/components/Worldview/index.svelte'
+  import V2 from '@/components/V2/index.svelte'
   import Mint from '@/components/Mint/index.svelte'
   import Event from '@/components/Event/index.svelte'
   import Roadmap from '@/components/Roadmap/index.svelte'
@@ -8,6 +9,7 @@
 </script>
 
 <Worldwide />
+<V2 />
 <Mint />
 <Event />
 <Roadmap />
