@@ -9,33 +9,33 @@
   const roadmapData: Array<Roadmap> = [
     {
       percent: '20%',
-      img: 'https://dummyimage.com/200x200.jpg?text=roadmapimg',
+      img: '/assets/roadmap1.png',
       description:
-        '로드맵 내용입니다. 로드맵 내용입니다. 우리는 10%에 도달하면 뭐뭐를 낼것입니다. 이것은 우리 프로젝트에 도움이되고 홀더들에게도 도움이 될 것입니다 어쩌구저쩌구.'
+        '로터스 스테이킹이 활성화됩니다. 또한 샌드박스에서 클론들의 전시회가 시작됩니다. 게임같은 전시회를 즐겨주세요!'
     },
     {
       percent: '40%',
-      img: 'https://dummyimage.com/200x200.jpg?text=roadmapimg',
+      img: '/assets/roadmap2.png',
       description:
-        '로드맵 내용입니다. 로드맵 내용입니다. 우리는 10%에 도달하면 뭐뭐를 낼것입니다. 이것은 우리 프로젝트에 도움이되고 홀더들에게도 도움이 될 것입니다 어쩌구저쩌구.'
+        '클론들의 이야기를 10편의 코믹으로 풀어나가게 됩니다. 오직 홀더분들만이 코믹을 보게 됩니다!'
     },
     {
       percent: '60%',
-      img: 'https://dummyimage.com/200x200.jpg?text=roadmapimg',
+      img: '/assets/roadmap3.png',
       description:
-        '로드맵 내용입니다. 로드맵 내용입니다. 우리는 10%에 도달하면 뭐뭐를 낼것입니다. 이것은 우리 프로젝트에 도움이되고 홀더들에게도 도움이 될 것입니다 어쩌구저쩌구.'
+        '메타버스 속에서 클론들만의 패션이 진행됩니다.'
     },
     {
       percent: '80%',
-      img: 'https://dummyimage.com/200x200.jpg?text=roadmapimg',
+      img: '/assets/roadmap4.png',
       description:
-        '로드맵 내용입니다. 로드맵 내용입니다. 우리는 10%에 도달하면 뭐뭐를 낼것입니다. 이것은 우리 프로젝트에 도움이되고 홀더들에게도 도움이 될 것입니다 어쩌구저쩌구.'
+        '클론들만의 nft아트를 선물해드립니다.'
     },
     {
       percent: '100%',
-      img: 'https://dummyimage.com/200x200.jpg?text=roadmapimg',
+      img: '/assets/roadmap5.png',
       description:
-        '로드맵 내용입니다. 로드맵 내용입니다. 우리는 10%에 도달하면 뭐뭐를 낼것입니다. 이것은 우리 프로젝트에 도움이되고 홀더들에게도 도움이 될 것입니다 어쩌구저쩌구.'
+        'Clones Never Die V3 개발과 다양한 프로젝트가 진행이됩니다.'
     }
   ]
 </script>
