@@ -4,10 +4,9 @@
 </script>
 
 <div class="container" id="mint">
-  <div class="container-title">CxNxD V2 Mint</div>
+  <div class="container-title">CxNxD 萬 Mint</div>
   <div class="container-paragraph">
-    클론즈 네버 다이의 버전 2를 민트할 수 있습니다. 클론즈 하나당 가격은 30매틱입니다. 매틱이 없다면 아래 방법을
-    참고해서 매틱을 얻을 수 있습니다.
+    You can Mint Clones Never Die 萬. The Mint price of one clone is 45 MATIC. If you don't have a MATIC, check here.
   </div>
   <br />
   <div class="container-content">

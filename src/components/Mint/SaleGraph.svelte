@@ -30,7 +30,7 @@
 <div class="progressbar">
   <div class="in-progressbar" style="{percentWidth}">{percent}%</div>
 </div>
-<div class="amount">{$totalSupply} / 10,000 Clones</div>
+<div class="amount">{$totalSupply} / 10000 Clones</div>
 
 <style lang="scss">
   .progressbar {

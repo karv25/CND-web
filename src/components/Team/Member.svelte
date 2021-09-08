@@ -1,22 +1,18 @@
 <script lang="ts">
   import Fa from 'svelte-fa'
-  import { faFlag } from '@fortawesome/free-solid-svg-icons'
+  import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
   export let memberImage: string
   export let name: string
   export let description: string
   export let twitter: string
-  export let facebook: string
-  export let discord: string
 </script>
 
 <div class="team-member">
   <img class="member-image" src="{memberImage}" alt="team" />
   <div class="member-name">{name}</div>
   <ul class="member-sns">
-    <li><a href={twitter}><Fa icon="{faFlag}" /></a></li>
-    <li><a href="{facebook}"><Fa icon="{faFlag}" /></a></li>
-    <li><a href="{discord}"><Fa icon="{faFlag}" /></a></li>
+    <li><a href={twitter} target="_blank"><Fa icon="{faTwitter}" /></a></li>
   </ul>
   <div class="member-description">
     {description}
@@ -55,6 +51,7 @@
   .member-description {
     font-size: 0.8rem;
     line-height: 20px;
+    height: 180px;
   }
 
   @media screen and (max-width: 768px) {

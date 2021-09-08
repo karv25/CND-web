@@ -50,6 +50,7 @@
     width: 100%;
     height: 80px;
     line-height: 20px;
+    margin-bottom: 20px;
   }
 
   @media screen and (max-width: 768px) {
@@ -66,5 +67,13 @@
       width: 100%;
       line-height: 20px;
     }
+
+    .rate-paragraph {
+    font-size: 0.9rem;
+    width: 100%;
+    height: 110px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
   }
 </style>

@@ -11,31 +11,28 @@
       percent: '20%',
       img: '/assets/roadmap1.png',
       description:
-        '로터스 스테이킹이 활성화됩니다. 또한 샌드박스에서 클론들의 전시회가 시작됩니다. 게임같은 전시회를 즐겨주세요!'
+        'Lotus staking is activated. In addition, an exhibition of clones will begin at Sandbox. Please enjoy the game-like exhibition!'
     },
     {
       percent: '40%',
       img: '/assets/roadmap2.png',
-      description:
-        '클론들의 이야기를 10편의 코믹으로 풀어나가게 됩니다. 오직 홀더분들만이 코믹을 보게 됩니다!'
+      description: "he story of the clones will be told in 10 comic. Only the holders will be able to watch it's comic!"
     },
     {
       percent: '60%',
       img: '/assets/roadmap3.png',
-      description:
-        '메타버스 속에서 클론들만의 패션이 진행됩니다.'
+      description: "Clones' own fashion takes place in the metabus."
     },
     {
       percent: '80%',
       img: '/assets/roadmap4.png',
-      description:
-        '클론들만의 nft아트를 선물해드립니다.'
+      description: "Clones will present their own nft art. It's fun to collect collections!"
     },
     {
       percent: '100%',
       img: '/assets/roadmap5.png',
       description:
-        'Clones Never Die V3 개발과 다양한 프로젝트가 진행이됩니다.'
+        'Clones Never Die V3 development and various projects are underway. Please be looking forward for it!'
     }
   ]
 </script>
@@ -45,16 +42,14 @@
   <div class="container-content">
     <div class="sub-content">
       <div class="sub-content-paragraph">
-        우리는 이번 CxNxV V2가 판매됨에 따라 실행할 목표를 정했습니다. 목표 판매율에 달성할때마다 그에 대한 작업을
-        실행합니다!
+        We have set a goal to implement this CxNxD 萬 as it is sold. Every time we achieve our target sales rate, we
+        work on it!
       </div>
     </div>
     {#each roadmapData as item}
       <Tile percent="{item.percent}" img="{item.img}" description="{item.description}" />
     {/each}
-    <div class="mobile-occupy">
-      CND를 많이 응원해주세요!
-    </div>
+    <div class="mobile-occupy"></div>
   </div>
 </div>
 
@@ -81,13 +76,13 @@
   }
 
   .mobile-occupy {
-      display: none;
-      flex-direction: column;
-      font-size: 0.9rem;
-      width: 50%;
-      padding: 5px;
-      box-sizing: border-box;
-    }
+    display: none;
+    flex-direction: column;
+    font-size: 0.9rem;
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
 
   @media screen and (max-width: 768px) {
     .sub-content {

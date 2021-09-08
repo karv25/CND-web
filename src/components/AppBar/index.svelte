@@ -1,8 +1,9 @@
 <script lang="ts">
   import * as animateScroll from 'svelte-scrollto'
   import Fa from 'svelte-fa'
-  import { faFlag } from '@fortawesome/free-solid-svg-icons'
-  import { push, pop, replace } from 'svelte-spa-router'
+  import { faTwitter, faDiscord, faMedium, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
+  import { faBars } from '@fortawesome/free-solid-svg-icons'
+  import { push } from 'svelte-spa-router'
 
   let navbarMenu = 'navbar_menu'
   let navbarIcons = 'navbar_icons'
@@ -34,13 +35,16 @@
   </ul>
 
   <ul class="{toggleBtnActive === false ? 'navbar_icons' : 'navbar_icons_active'}">
-    <li><a href="/#/"><Fa icon="{faFlag}" /></a></li>
-    <li><a href="/#/home"><Fa icon="{faFlag}" /></a></li>
-    <li><a href="/#/home"><Fa icon="{faFlag}" /></a></li>
+    <li><a href="https://twitter.com/clonesneverdie" target="_blank"><Fa icon="{faTwitter}" /></a></li>
+    <li><a href="https://discord.gg/DNJ3sYCcGG" target="_blank"><Fa icon="{faDiscord}" /></a></li>
+    <li><a href="https://medium.com/clones-never-die" target="_blank"><Fa icon="{faMedium}" /></a></li>
+    <li><a href="https://www.instagram.com/clones_never_d1e" target="_blank"><Fa icon="{faInstagram}" /></a></li>
+    <li><a href="https://twitter.com/clonesneverdie" target="_blank"><Fa icon="{faYoutube}" /></a></li>
+    <li><a href="https://opensea.io/collection/clones-never-die" target="_blank"><img class="opensea-logo" src="/assets/opensea-logo.png" alt="opensealogo"></a></li>
   </ul>
 
   <div class="navbar_toggleBtn" on:click="{() => (toggleBtnActive = !toggleBtnActive)}">
-    <Fa icon="{faFlag}" />
+    <Fa icon="{faBars}" />
   </div>
 </nav>
 
@@ -106,6 +110,11 @@
       position: absolute;
       right: 32px;
       font-size: 24px;
+    }
+
+    .opensea-logo {
+      width: 16px;
+      height: 16px;
     }
   }
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Fa from 'svelte-fa'
-  import { faFlag } from '@fortawesome/free-solid-svg-icons'
+  import { faTwitter, faDiscord, faMedium, faInstagram } from '@fortawesome/free-brands-svg-icons'
+  import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <hr />
@@ -12,12 +13,15 @@
         <div class="footer-title">contact us</div>
       </div>
       <ul class="navbar_icons">
-        <li><a href="/#/"><Fa icon="{faFlag}" /></a></li>
-        <li><a href="/#/home"><Fa icon="{faFlag}" /></a></li>
-        <li><a href="mailto:popcateum@gmail.com"><Fa icon="{faFlag}" /></a></li>
+        <li><a href="https://twitter.com/clonesneverdie" target="_blank"><Fa icon="{faTwitter}" /></a></li>
+        <li><a href="https://discord.gg/DNJ3sYCcGG" target="_blank"><Fa icon="{faDiscord}" /></a></li>
+        <li><a href="https://www.instagram.com/clones_never_d1e" target="_blank"><Fa icon="{faInstagram}" /></a></li>
+        <li><a href="mailto:popcateum@gmail.com" target="_blank"><Fa icon="{faEnvelope}" /></a></li>
       </ul>
       <div class="notice-content">
-        Copyright: clones never die의 모든 작품은 이설 작가에게 있습니다. 무단으로 사용시 법적 처벌을 받을 수 있습니다.
+        copyrightⓒ 2021 All rights reserved by Clones Never Die.
+        <br />
+        If you use a picture without permission, you can be legally punished.
       </div>
     </div>
     <div class="footer-logo-container">

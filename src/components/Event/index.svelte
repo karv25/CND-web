@@ -6,29 +6,25 @@
     name: string
     description: string
     img: string
+    link: string
   }
 
   const eventData: Array<EContent> = [
     {
       progress: true,
-      name: '에어드랍 이벤트',
+      name: 'Original Holder Event',
       description:
-        '에어드랍 이벤트! 우리 트위터를 팔로우 하고 트윗을 남겨주세요! 300명을 선정해서 CxNxD V2 를 에어드랍 합니다!',
-      img: 'https://dummyimage.com/200x100.gif?text=event-sample'
+        'We airdrop CxNxD 萬 clone to the wallet address holding the CxNxD original until September 13th. ',
+      img: 'https://dummyimage.com/200x100.gif?text=event-sample',
+      link: 'https://www.naver.com'
     },
     {
       progress: true,
-      name: '에어드랍 이벤트',
+      name: 'Follow Airdrop Event',
       description:
-        '에어드랍 이벤트! 우리 트위터를 팔로우 하고 트윗을 남겨주세요! 300명을 선정해서 CxNxD V2 를 에어드랍 합니다!',
-      img: 'https://dummyimage.com/200x100.gif?text=event-sample'
-    },
-    {
-      progress: true,
-      name: '에어드랍 이벤트',
-      description:
-        '에어드랍 이벤트! 우리 트위터를 팔로우 하고 트윗을 남겨주세요! 300명을 선정해서 CxNxD V2 를 에어드랍 합니다!',
-      img: 'https://dummyimage.com/200x100.gif?text=event-sample'
+        'Follow our Twitter and participate in the discode, airdrop CxNxD 萬 clone to the participating users. ',
+      img: 'https://dummyimage.com/200x100.gif?text=event-sample',
+      link: 'https://www.daum.net'
     }
   ]
 </script>
@@ -37,7 +33,13 @@
   <div class="container-title">Event</div>
   <div class="container-content">
     {#each eventData as item}
-      <EventContent progress="{item.progress}" name="{item.name}" description="{item.description}" img="{item.img}" />
+      <EventContent
+        progress="{item.progress}"
+        name="{item.name}"
+        description="{item.description}"
+        img="{item.img}"
+        link="{item.link}"
+      />
     {/each}
   </div>
 </div>
@@ -49,7 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
   }
 </style>

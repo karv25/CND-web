@@ -1,13 +1,15 @@
 <script lang="ts">
 </script>
 
-<img class="banner" src="/assets/main-banner.jpeg" alt="main-banner" />
+<video class="banner" src="/assets/main.mov" autoplay loop muted playsinline></video>
 
 <div class="container">
   <div class="container-content">
     <div class="container-title">Clones Never Die Worldwide</div>
     <div class="container-paragraph">
-      ‘허’라는 공간에서 ‘신’이라 불릴만한 존재는 ‘타’라는 무언가가 필요하다고 느끼게 되어서
+      ‘허’라는 공간에서 ‘신’이라 불릴만한 존재는 
+      <br />
+      ‘타’라는 무언가가 필요하다고 느끼게 되어서
       <br />
       자기와 같은 존재를 만들게 되었다.
       <br />
@@ -44,10 +46,10 @@
   </div>
 
   <div class="container-image">
-    <img class="sub-image" src="/assets/null-nft.jpg" alt="NULL" />
-    <div class="subtitle">King and God of Clones #Null</div>
+    <img class="sub-image" src="/assets/worldwidepic.png" alt="worldwide" />
+    <div class="subtitle">Clones Never Die</div>
     <div class="subcontent">
-      <a class="link" href="https://opensea.io/collection/clones-never-die">Opensea CxNxD V1 컬랙션 보러가기</a>
+      <a class="link" href="https://opensea.io/collection/clones-never-die" target="_blank">Going to Opensea CxNxD Original collection</a>
     </div>
   </div>
 </div>
@@ -67,8 +69,8 @@
 
   .container-paragraph {
     margin-bottom: 10px;
-    font-size: 1rem;
-    line-height: 26px;
+    font-size: 1.1rem;
+    line-height: 30px;
   }
 
   .container-image {
@@ -111,5 +113,11 @@
     .divide-line {
       margin: 40px 10px;
     }
+
+    .container-paragraph {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 26px;
+  }
   }
 </style>

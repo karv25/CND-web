@@ -5,13 +5,13 @@
   <div class="container-title">Community</div>
   <div class="container-content">
     <div class="sub-content">
-      우리는 커뮤니티를 통해 CxNxD 유저들이 소통할 수 있었으면 합니다. 그래서 디스코드 커뮤니티와 트위터를 운영합니다!
-      부디 이 sns들이 서로간의 소통의 장이 되었으면 합니다! 우리는 커뮤니티를 통해 CxNxD 유저들이 소통할 수 있었으면
-      합니다. 그래서 디스코드 커뮤니티와 트위터를 운영합니다! 부디 이 sns들이 서로간의 소통의 장이 되었으면 합니다!
+      We hope that CxNxD users can communicate through the community. So we run Discord Community and Twitter! We plan
+      to share various events and information in the community. We want this SNS to be a place of communication! Please
+      enjoy Clones Never Die together!
     </div>
     <div class="sub-btn">
-      <a href="https://www.naver.com"><div class="btn"><b>Discord</b></div></a>
-      <a href="https://www.naver.com"><div class="btn"><b>Twitter</b></div></a>
+      <a href="https://discord.gg/DNJ3sYCcGG" target="_blank"><div class="btn"><b>Discord</b></div></a>
+      <a href="https://twitter.com/clonesneverdie" target="_blank"><div class="btn"><b>Twitter</b></div></a>
     </div>
   </div>
 </div>

@@ -6,42 +6,35 @@
     name: string
     description: string
     twitter: string
-    facebook: string
-    discord: string
   }
 
   const teamData: Array<Member> = [
     {
       memberImage: '/assets/M1.jpeg',
-      name: '1번',
-      description: '안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.',
-      twitter: 'https://twitter.com',
-      discord: 'https://discord.com',
-      facebook: 'https://facebook.com'
+      name: '2SSUL | Artist',
+      description:
+        'I met such great developers that I made this great project. I always tried to make something through my own art. I will make fun stories through clones. Thank you.',
+      twitter: 'https://twitter.com/clonesneverdie'
     },
     {
-      memberImage: '/assets/M1.jpeg',
-      name: '1번',
-      description: '안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.',
-      twitter: 'https://twitter.com',
-      discord: 'https://discord.com',
-      facebook: 'https://facebook.com'
+      memberImage: '/assets/M2.jpeg',
+      name: 'ELIXIR | Developer',
+      description:
+        "I have created a blockchain called Popcateum. I'm serious about blockchain and I really like it. And I like clones, too.",
+      twitter: 'https://twitter.com/elixirevo'
     },
     {
-      memberImage: '/assets/M1.jpeg',
-      name: '1번',
-      description: '안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.',
-      twitter: 'https://twitter.com',
-      discord: 'https://discord.com',
-      facebook: 'https://facebook.com'
+      memberImage: '/assets/M3.jpeg',
+      name: 'ARVITOR | Director',
+      description:
+        'I have experience in successfully launching a PFP called Doge Sound Club in Korea. I really liked his ambition and talent to create several metaverse clothing brands and got involved.',
+      twitter: 'https://twitter.com/DSC_ARVITOR'
     },
     {
-      memberImage: '/assets/M1.jpeg',
-      name: '1번',
-      description: '안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.안녕하세요 팀원설명입니다.',
-      twitter: 'https://twitter.com',
-      discord: 'https://discord.com',
-      facebook: 'https://facebook.com'
+      memberImage: '/assets/M4.jpeg',
+      name: 'YUNKO | Advisor',
+      description: 'Founder of Yunko association, software developer, and NFT enthusiast.',
+      twitter: 'https://twitter.com/yunko1803'
     }
   ]
 </script>
@@ -55,8 +48,6 @@
         name="{item.name}"
         description="{item.description}"
         twitter="{item.twitter}"
-        facebook="{item.facebook}"
-        discord="{item.discord}"
       />
     {/each}
   </div>
