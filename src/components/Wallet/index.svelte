@@ -28,9 +28,6 @@
 </div>
 
 <style lang="scss">
-  .container {
-    margin-top: 30px;
-  }
   .container-content {
     display: flex;
     flex-direction: row;

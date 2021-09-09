@@ -13,11 +13,11 @@
     toggleBtnActive = !toggleBtnActive
   }
 
-  function toMint() {
-    push('/')
-    animateScroll.scrollTo({ element: '#mint' })
-    clickedToggleBtn()
-  }
+  // function toMint() {
+  //   push('/')
+  //   animateScroll.scrollTo({ element: '#mint' })
+  //   clickedToggleBtn()
+  // }
 </script>
 
 <nav class="navbar">
@@ -28,9 +28,10 @@
 
   <ul class="{toggleBtnActive === false ? 'navbar_menu' : 'navbar_menu_active'}">
     <li><a href="/#/" on:click="{clickedToggleBtn}">Home</a></li>
-    <li><div on:click="{toMint}">Mint</div></li>
+    <!-- <li><div on:click="{toMint}">Mint</div></li> -->
+    <li><a href="/#/mint" on:click="{clickedToggleBtn}">Mint</a></li>
     <li><a href="/#/wallet" on:click="{clickedToggleBtn}">Wallet</a></li>
-    <li><a href="/#/gallery" on:click="{clickedToggleBtn}">Gallery</a></li>
+    <li><a href="/#/lotus" on:click="{clickedToggleBtn}">Lotus</a></li>
     <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
   </ul>
 
@@ -53,7 +54,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
+    padding: 18px 12px;
 
     a {
       text-decoration: none;
@@ -122,7 +123,7 @@
     .navbar {
       flex-direction: column;
       align-items: flex-start;
-      padding: 8px 24px;
+      padding: 18px 24px;
 
       .navbar_menu {
         display: none;
