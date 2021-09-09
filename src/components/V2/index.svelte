@@ -26,10 +26,40 @@
           <br />
           There are no clones of the same form and they are unique.
           <br />
+          And each clone has a rarity.
+          <br />
           If you have clones, you can use the clone picture wherever you want and do various activities in the clone never
           die world.
           <br />
           And 'CxNxD 萬' can also earn $Nectar from Lotus!
+        </div>
+      </div>
+    </div>
+    <div class="sub-content">
+      <div class="info">
+        <div class="info-box">
+          <div class="info-box-title">Rarity</div>
+          <div class="info-box-paragraph">
+            Each clone has a rarity. It is set from 0 to 10000 and all relevant data is stored in IPFS.
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">Lotus</div>
+          <div class="info-box-paragraph">This is where CxNxD clones work. Clones can earn $Nectar here.</div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">$Nectar</div>
+          <div class="info-box-paragraph">
+            $Nectar is a token used in the CxNxD world. It can be used to vote on governance or mint V3, and we are
+            planning various other uses.
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">Governance</div>
+          <div class="info-box-paragraph">
+            CxNxD team operates governance to reflect the opinions of holders. $Nectar holders can make various opinions
+            and vote.
+          </div>
         </div>
       </div>
     </div>
@@ -79,6 +109,31 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .info-box {
+    width: 20%;
+  }
+
+  .info-box-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: $highlight-color;
+  }
+
+  .info-box-paragraph {
+    font-size: 0.9rem;
+    line-height: 20px;
+    height: 80px;
   }
 
   .sub-content-contract {
@@ -190,6 +245,23 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 10px;
+    }
+    .info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+    }
+    .info-box {
+      width: 100%;
+    }
+
+    .info-box-paragraph {
+      font-size: 0.9rem;
+      line-height: 20px;
+      height: 80px;
     }
   }
 </style>
