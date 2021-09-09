@@ -1,7 +1,5 @@
 <script lang="ts">
-  import Worldwide from '@/components/Worldview/index.svelte'
+  import Wallet from '@/components/Wallet/index.svelte'
 </script>
 
-<div>
-  walltet
-</div>
+<Wallet />
