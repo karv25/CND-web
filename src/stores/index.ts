@@ -8,6 +8,7 @@ export const isConnect:any = writable(false)
 export const provider:any = writable(null)
 export const signer:any = writable(null)
 export const myAddress:any = writable(null)
+export const myAddressShort:any = writable(null)
 export const myBalance:any = writable(0)
 
 // contract

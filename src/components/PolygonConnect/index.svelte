@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onDestroy } from 'svelte'
   import { ethers } from 'ethers'
-  import { isConnect, myAddress, myBalance, provider, signer } from '@/stores'
+  import { isConnect, myAddress, myAddressShort, myBalance, provider, signer } from '@/stores'
+import App from '@/App.svelte';
   const ethereum: any | undefined = (window as any).ethereum
 
   onDestroy(() => {
@@ -59,6 +60,7 @@
 
   async function getAddress() {
     $myAddress = await $signer.getAddress()
+    $myAddressShort = `${$myAddress.slice(0, 6)}...${$myAddress.slice(-4)}`
   }
 
   async function getBalance() {

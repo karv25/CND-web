@@ -7,7 +7,7 @@
     <div class="youtube-frame">
       <iframe
         class="youtube"
-        src="https://www.youtube.com/embed/hEDw2JARbIc"
+        src="https://www.youtube.com/embed/ZlF9Mz1QUjY"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -18,7 +18,7 @@
       <div class="sub-content-box">
         <div class="sub-content-title">About 'Clones Never Die 萬'</div>
         <div class="sub-content-paragraph">
-          'Clones Never Die 萬' is a sequel to 'Clones Never Die Original'.
+          'Clones Never Die 萬' is version 2 of 'Clones Never Die'.
           <br />
           'CxNxD 萬' is exists in the polygon blockchain.
           <br />
@@ -71,11 +71,11 @@
           CxNxD 萬 tokens are distributed as follows.
           <br />
           <br />
-          CxNxD Team: 500 Clones
+          CxNxD Team: 500 Clones, (No. 0 ~ 499)
           <br />
-          Airdrop: 500 Clones
+          Airdrop: 500 Clones, (No. 500 ~ 999)
           <br />
-          Sales: 9,000 Clones
+          Sale: 9,000 Clones, (No. 1,000 ~ 9,999)
           <br />
           <br />
           The quantity received by the CxNxD team is distributed to ensure smooth governance in the future.
@@ -185,7 +185,7 @@
   }
 
   .youtube-frame {
-    width: 50%;
+    width: 60%;
     text-align: center;
     margin-bottom: 30px;
   }

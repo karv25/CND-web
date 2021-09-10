@@ -16,7 +16,7 @@
         <li><a href="https://twitter.com/clonesneverdie" target="_blank"><Fa icon="{faTwitter}" /></a></li>
         <li><a href="https://discord.gg/DNJ3sYCcGG" target="_blank"><Fa icon="{faDiscord}" /></a></li>
         <li><a href="https://www.instagram.com/clones_never_d1e" target="_blank"><Fa icon="{faInstagram}" /></a></li>
-        <li><a href="mailto:popcateum@gmail.com" target="_blank"><Fa icon="{faEnvelope}" /></a></li>
+        <li><a href="mailto:kokoro.clones@gmail.com" target="_blank"><Fa icon="{faEnvelope}" /></a></li>
       </ul>
       <div class="notice-content">
         copyrightⓒ 2021 All rights reserved by Clones Never Die.

@@ -1,24 +1,43 @@
 <script lang="ts">
+  import PConnect from '@/components/PolygonConnect/index.svelte'
+  import { isConnect, myAddressShort } from '@/stores'
 </script>
 
 <div class="container">
   <div class="container-title">CxNxD Wallet</div>
   <div class="container-content">
-    <div class="sub-content">
-      <div class="connectBtn">walltet connect</div>
+    <div class="container-paragraph">
+      It's a wallet where you can check your clones and $Nectar.
+      <br />
+      Check it out now!
     </div>
-
     <div class="sub-content">
-      <div class="sub-title">$Nectar</div>
+      {#if $isConnect}
+        <div class="connected">
+          <b>
+            {$myAddressShort}
+          </b>
+        </div>
+      {:else}
+        <div class="connectBtn">
+          <PConnect />
+        </div>
+      {/if}
+    </div>
+    <div class="sub-content">
+      <div class="sub-title"><b>$Nectar</b></div>
       <div class="sub-item">My $Nectar: 0</div>
     </div>
-    <hr />
     <div class="sub-content">
-      <div class="sub-title">CxNxD 萬</div>
+      <div class="sub-title"><b>CxNxD 萬</b></div>
       <div class="sub-item">My Clones: 100</div>
       <div class="sub-list">
         <div class="sub-list-item">
-          <img class="item-image" src="https://gateway.pinata.cloud/ipfs/QmdNtjM6jSzMTbczjPpiv1TY4WugxM3CqxadiTHAtrAy9p/clone-12.jpg" alt="img" />
+          <img
+            class="item-image"
+            src="https://gateway.pinata.cloud/ipfs/QmdNtjM6jSzMTbczjPpiv1TY4WugxM3CqxadiTHAtrAy9p/clone-12.jpg"
+            alt="img"
+          />
           <div class="item-name">Token Id: 0</div>
           <div class="item-name">Name: CxNxD #0002</div>
         </div>
@@ -33,10 +52,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 80vh;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
+  .connected {
+    width: 200px;
+    background-color: $highlight-color;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
   .connectBtn {
     width: 200px;
     background-color: $highlight-color;
@@ -48,9 +77,11 @@
     cursor: pointer;
   }
 
+  .container-paragraph {
+    width: 60%;
+  }
   .sub-content {
     width: 100%;
-    margin-bottom: 40px;
   }
 
   .sub-title {
@@ -93,12 +124,16 @@
 
   @media screen and (max-width: 768px) {
     .sub-list-item {
-    width: 49%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid $highlight-color;
-    border-radius: 10px;
-    box-sizing: border-box;
-  }
+      width: 49%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid $highlight-color;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    .container-paragraph {
+      width: 100%;
+    }
   }
 </style>
