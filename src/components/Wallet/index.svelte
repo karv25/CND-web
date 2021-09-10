@@ -82,6 +82,7 @@
   }
   .sub-content {
     width: 100%;
+    margin-bottom: 40px;
   }
 
   .sub-title {

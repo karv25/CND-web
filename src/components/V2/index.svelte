@@ -28,8 +28,8 @@
           <br />
           And each clone has a rarity.
           <br />
-          If you have clones, you can use the clone picture wherever you want and do various activities in the clone never
-          die world.
+          If you have clones, you can use the clone picture wherever you want and do various activities in the Clones Never
+          Die world.
           <br />
           And 'CxNxD 萬' can also earn $Nectar from Lotus!
         </div>
