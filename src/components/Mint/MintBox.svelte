@@ -1,11 +1,16 @@
 <script lang="ts">
   import { isConnect, myAddress, contractAddress, signer, totalSupply, myBalance, cost } from '@/stores'
   import PConnect from '@/components/PolygonConnect/index.svelte'
+  import TxModal from '@/components/TxModal/index.svelte'
   import CNDV2Tabi from '@/data/abi/ClonesNeverDieV2Test.json'
   import { ethers } from 'ethers'
 
   let mintValue: any
   let payableMatic: any
+
+  let showModal: boolean = false
+  let txHash: any
+  let txHashLink: any
 
   $: $myAddress
 
@@ -21,9 +26,18 @@
     }
     const contract = await new ethers.Contract($contractAddress, CNDV2Tabi, $signer)
     const transaction = await contract.mintClone(mintValue, overrides)
-    await transaction.wait()
+    openModal()
+    await transaction.wait().then((data: any) => {
+      txHash = data.transactionHash
+    })
+    mintValue = null
+    txHashLink = `https://explorer.popcateum.org/tx/${txHash}`
     const ts = await contract.totalSupply()
     $totalSupply = ts
+  }
+
+  function openModal() {
+    showModal = !showModal
   }
 </script>
 
@@ -33,7 +47,7 @@
     <input type="text" readonly value="{$myAddress}" disabled="{!$isConnect}" />
     <div class="subtitle"><b>Number of mint limit (1-20)</b></div>
     <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" />
-    <div class="subcontent">notice: 1 Clone = 30 MATIC</div>
+    <div class="subcontent">Notice: 1 Clone = 45 MATIC</div>
     <div class="subcontent">
       Your MATIC balance: {$myBalance}
     </div>
@@ -56,9 +70,7 @@
   </div>
 </div>
 
-<div class="modal">
-  <div class="modal_body">Modal</div>
-</div>
+<TxModal showModal="{showModal}" txHash="{txHash}" txHashLink="{txHashLink}" on:click="{openModal}" />
 
 <style lang="scss">
   .mintbox {
@@ -68,30 +80,6 @@
     border: 2px solid $highlight-color;
     box-sizing: border-box;
     border-radius: 10px;
-  }
-
-  .modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-
-  .modal_body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 250px;
-    height: 60vh;
-    padding: 40px;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-    transform: translateX(-50%) translateY(-50%);
   }
 
   .boxcontent {
