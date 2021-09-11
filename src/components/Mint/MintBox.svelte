@@ -36,8 +36,20 @@
     $totalSupply = ts
   }
 
+  function onInputCheck(e: any) {
+    if (!/^([1-9]{1}|1[0-9]{1}|20)$/.test(e.target.value)) {
+      e.target.value = ''
+    }
+  }
+
   function openModal() {
     showModal = !showModal
+  }
+
+  function setModal() {
+    openModal()
+    txHash = null
+    txHashLink = null
   }
 </script>
 
@@ -46,7 +58,7 @@
     <div class="subtitle"><b>Your Address</b></div>
     <input type="text" readonly value="{$myAddress}" disabled="{!$isConnect}" />
     <div class="subtitle"><b>Number of mint limit (1-20)</b></div>
-    <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" />
+    <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" on:input="{onInputCheck}" />
     <div class="subcontent">Notice: 1 Clone = 45 MATIC</div>
     <div class="subcontent">
       Your MATIC balance: {$myBalance}
@@ -70,7 +82,7 @@
   </div>
 </div>
 
-<TxModal showModal="{showModal}" txHash="{txHash}" txHashLink="{txHashLink}" on:click="{openModal}" />
+<TxModal showModal="{showModal}" txHash="{txHash}" txHashLink="{txHashLink}" on:click="{setModal}" />
 
 <style lang="scss">
   .mintbox {
