@@ -6,7 +6,7 @@
 <div class="container" id="mint">
   <div class="container-title">CxNxD 萬 Mint</div>
   <div class="container-paragraph">
-    You can mint 'Clones Never Die 萬'. The mint price of one clone is 45 MATIC. If you don't have a MATIC, check here.
+    You can mint 'Clones Never Die 萬'. The mint price of one clone is 45 MATIC. If you don't have MATIC, check here.
   </div>
   <br />
   <div class="container-content">

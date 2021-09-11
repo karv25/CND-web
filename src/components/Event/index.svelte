@@ -13,8 +13,7 @@
     {
       progress: true,
       name: 'Original Holder Event',
-      description:
-        'We airdrop CxNxD 萬 clone to the wallet address holding the CxNxD original until September 13th. ',
+      description: 'We airdrop CxNxD 萬 clone to the wallet address holding the CxNxD original until September 13th. ',
       img: '/assets/event1.jpeg',
       link: 'https://www.naver.com'
     },
@@ -22,8 +21,8 @@
       progress: true,
       name: 'Follow Airdrop Event',
       description:
-        'Follow our Twitter and participate in the discode, airdrop CxNxD 萬 clone to the participating users. ',
-        img: '/assets/event2.jpeg',
+        'Follow our Twitter and participate in the discord, we will airdrop CxNxD 萬 clone to participating users.',
+      img: '/assets/event2.jpeg',
       link: 'https://www.daum.net'
     }
   ]

@@ -20,7 +20,7 @@
         <div class="sub-content-paragraph">
           'Clones Never Die 萬' is version 2 of 'Clones Never Die'.
           <br />
-          'CxNxD 萬' is exists in the polygon blockchain.
+          'CxNxD 萬' exists on the polygon blockchain.
           <br />
           Each unique part was used to create 10,000 NFTs.
           <br />
@@ -57,8 +57,8 @@
         <div class="info-box">
           <div class="info-box-title">Governance</div>
           <div class="info-box-paragraph">
-            CxNxD team operates governance to reflect the opinions of holders. $Nectar holders can make various opinions
-            and vote.
+            CxNxD team operates governance to reflect the opinions of holders. $Nectar holders can voice out their
+            opinion and vote.
           </div>
         </div>
       </div>

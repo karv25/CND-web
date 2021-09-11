@@ -21,18 +21,18 @@
     {
       percent: '60%',
       img: '/assets/roadmap3.png',
-      description: "Clones' own fashion takes place in the metabus."
+      description: "Clones' own fashion takes place in the metaverse"
     },
     {
       percent: '80%',
       img: '/assets/roadmap4.png',
-      description: "Clones will present their own nft art. It's fun to collect collections!"
+      description: "Clones will present its own NFT art collection. Let's collect the art together!"
     },
     {
       percent: '100%',
       img: '/assets/roadmap5.png',
       description:
-        'Clones Never Die V3 development and various projects are underway. Please be looking forward for it!'
+        'The Clones Never Die V3 development and various projects will begin. Please look forward to upcoming developments!'
     }
   ]
 </script>
@@ -42,8 +42,7 @@
   <div class="container-content">
     <div class="sub-content">
       <div class="sub-content-paragraph">
-        We have set a goal to implement this CxNxD 萬 as it is sold. Every time we achieve our target sales rate, we
-        work on it!
+        We will implement each CxNxD 萬 roadmap item at various milestones, based on the sales performance.
       </div>
     </div>
     {#each roadmapData as item}
