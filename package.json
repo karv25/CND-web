@@ -1,6 +1,7 @@
 {
   "name": "cnd-web",
   "version": "1.0.0",
+  "homepage": "https://clonesneverdie.com",
   "private": true,
   "scripts": {
     "build": "rollup -c",
