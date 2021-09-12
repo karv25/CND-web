@@ -1,5 +1,8 @@
 <script lang="ts">
   import PConnect from '@/components/PolygonConnect/index.svelte'
+  import LotusStaking from './LotusStaking.svelte'
+  import MyStakingList from './MyStakingList.svelte'
+  import SaleGraph from '@/components/Mint/SaleGraph.svelte'
   import { isConnect, myAddressShort } from '@/stores'
 </script>
 
@@ -27,66 +30,23 @@
         </div>
       {/if}
     </div>
-    <div class="sub-frame">
-      <div class="sub-content">
-        <div class="sub-title"><b>Lotus Staking</b></div>
-        <div class="sub-item">
-          <div class="sub-item-wrap">
-            <div class="sub-item-title"><b>Staking</b></div>
-            <div class="sub-item-explain">
-              Send clones to Lotus. Please select a clone to stake and press the button.
-            </div>
-            <div class="sub-item-title"><b>My Clones</b></div>
-            <ul class="sub-item-list-head">
-              <li class="list-item">
-                <div class="item-number">Select</div>
-                <div class="item-number">No.</div>
-                <div class="item-name">Name</div>
-                <div class="item-id">Token ID</div>
-              </li>
-            </ul>
-            <ul class="sub-item-list">
-              <li class="list-item">
-                <input type="checkbox" name="asd" />
-                <div class="item-number">1</div>
-                <div class="item-name">CxNxD #0001</div>
-                <div class="item-id">1</div>
-              </li>
-            </ul>
-            <div class="sub-selected">Selected ID: 1, 2, 3, 4, 5</div>
-            <div class="sub-btn">Staking</div>
-          </div>
+
+    {#if false}
+      <div class="sub-frame">
+        <LotusStaking />
+      </div>
+      <div class="sub-frame">
+        <MyStakingList />
+      </div>
+    {:else}
+      <div class="sub-frame">
+        <div class="prepare">It is activated when the minting progress rate reaches 20%</div>
+        <div class="graph">
+
+          <SaleGraph />
         </div>
       </div>
-    </div>
-    <div class="sub-frame">
-      <div class="sub-content">
-        <div class="sub-title"><b>My Staking</b></div>
-        <div class="sub-item">
-          <div class="sub-item-wrap">
-            <div class="sub-item-title"><b>My Staking List</b></div>
-            <div class="sub-item-explain">This is a list of my clones in Lotus. You can mint $Nectar.</div>
-            <ul class="sub-item-list-head">
-              <li class="list-item">
-                <div class="item-number">No.</div>
-                <div class="item-number">Clones</div>
-                <div class="item-name">Nectar</div>
-                <div class="item-id">Check Detail</div>
-              </li>
-            </ul>
-            <ul class="sub-item-list-long">
-              <li class="list-item">
-                <div class="item-number">1</div>
-                <div class="item-number">100</div>
-                <div class="item-number">10000000000</div>
-                <div class="check-btn">Check</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-content"></div>
+    {/if}
   </div>
 </div>
 
@@ -112,6 +72,15 @@
     cursor: pointer;
   }
 
+  .prepare {
+    font-size: 2rem;
+    color: $highlight-color;
+    margin-bottom: 40px;
+  }
+
+  .graph {
+    margin-bottom: 300px;
+  }
   .container-paragraph {
     width: 60%;
   }
@@ -131,108 +100,19 @@
     margin-bottom: 40px;
   }
 
-  .sub-title {
-    color: $highlight-color;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-
   .sub-frame {
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
   }
-  .sub-item {
-    border: 2px solid $highlight-color;
-    height: auto;
-    box-sizing: border-box;
-    border-radius: 10px;
-  }
 
-  .sub-item-wrap {
-    padding: 30px;
-    display: flex;
-    height: 80%;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .sub-item-title {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
-
-  .sub-item-explain {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
-  .sub-item-list {
-    padding: 10px;
-    height: 200px;
-    overflow: scroll;
-  }
-
-  .sub-item-list-long {
-    height: 330px;
-    overflow: scroll;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .sub-item-list-head {
-    box-sizing: border-box;
-    border-radius: 10px;
-  }
-
-  .list-item {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 1rem;
-  }
-
-  .sub-btn {
-    width: 100%;
-    background-color: $highlight-color;
-    font-size: 20px;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  .sub-selected {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .check-btn {
-    background-color: $highlight-color;
-    padding: 3px;
-    border-radius: 3px;
-  }
   @media screen and (max-width: 768px) {
     .sub-frame {
       width: 1000%;
       padding: 10px;
       box-sizing: border-box;
     }
-    .sub-item-wrap {
-      padding: 15px;
-    }
-    .list-item {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      font-size: 0.7rem;
-    }
+
     .sub-frame {
       width: 100%;
       padding: 0px;
