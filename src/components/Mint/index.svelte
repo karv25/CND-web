@@ -6,7 +6,11 @@
 <div class="container" id="mint">
   <div class="container-title">CxNxD 萬 Mint</div>
   <div class="container-paragraph">
-    You can mint 'Clones Never Die 萬'. The mint price of one clone is 45 MATIC. If you don't have MATIC, check here.
+    You can mint 'Clones Never Die 萬'. The mint price of one clone is 45 MATIC. If you don't have MATIC, check <a
+      class="link-style"
+      href="https://bit.ly/2VBodUj"
+      target="_blank">here</a
+    >.
   </div>
   <br />
   <div class="container-content">
@@ -16,7 +20,9 @@
     <div class="mintbox">
       <SaleGraph />
     </div>
-    <a class="collection" href="https://polygonscan.com/" target="_blank">Going to OpenSea CxNxD 萬 collection</a>
+    <a class="collection" href="https://opensea.io/collection/clones-never-die-v2" target="_blank"
+      >Going to OpenSea CxNxD 萬 collection</a
+    >
   </div>
 </div>
 

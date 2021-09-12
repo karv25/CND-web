@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<video class="banner" src="/assets/main.mp4" autoplay loop muted playsinline></video>
+<img class="banner" src="/assets/mainbanner.jpeg" alt="main-banner" />
 
 <div class="container">
   <div class="container-content">

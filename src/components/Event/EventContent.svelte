@@ -32,10 +32,6 @@
     margin-right: 10px;
   }
 
-  .link-style{
-    color: $highlight-color;
-  }
-
   .event-sub-box {
     margin: 10px;
   }

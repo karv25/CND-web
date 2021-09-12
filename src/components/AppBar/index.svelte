@@ -22,8 +22,7 @@
 
 <nav class="navbar">
   <div class="navbar_logo">
-    CxNxD
-    <!-- <img src="/assets/mainlogo.png" alt="mainlogo" /> -->
+    <img class="logo-img" src="/assets/appbar_logo.png" alt="mainlogo" />
   </div>
 
   <ul class="{toggleBtnActive === false ? 'navbar_menu' : 'navbar_menu_active'}">
@@ -59,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 12px;
+    padding: 12px 12px;
 
     a {
       text-decoration: none;
@@ -69,6 +68,10 @@
     .navbar_logo {
       width: 230px;
       font-size: 40px;
+    }
+
+    .logo-img {
+      width: 30%;
     }
 
     .navbar_menu {
@@ -128,7 +131,7 @@
     .navbar {
       flex-direction: column;
       align-items: flex-start;
-      padding: 18px 24px;
+      padding: 12px 24px;
 
       .navbar_menu {
         display: none;
