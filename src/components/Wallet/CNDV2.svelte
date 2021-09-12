@@ -13,7 +13,7 @@
   {#if $signer !== null && $myCNDV2Balance !== 0}
     {#each $myCNDV2List as item}
       <div class="sub-list-item">
-        <img class="item-image" src="{imgApi(item)}" alt="img" />
+        <!-- <img class="item-image" src="{imgApi(item)}" alt="img" /> -->
         <div class="item-name">Token Id: {item}</div>
         <div class="item-name">Name: CxNxD #{item}</div>
       </div>

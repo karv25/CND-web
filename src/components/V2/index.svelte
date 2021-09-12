@@ -85,8 +85,10 @@
     <div class="sub-content">
       <div class="sub-content-box-center">
         CxNxD 萬 Contract Address
-        <a class="sub-content-contract" href="https://polygonscan.com/" target="_blank"
-          >0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D</a
+        <a
+          class="sub-content-contract"
+          href="https://polygonscan.com/token/0x6c15030A0055D7350c89EbbD460EB4F145462Fbd"
+          target="_blank">0x6c15030A0055D7350c89EbbD460EB4F145462Fbd</a
         >
       </div>
     </div>
