@@ -2,7 +2,7 @@
   import { myCNDV2Balance, myCNDV2List, signer } from '@/stores'
 
   function imgApi(i: any) {
-    let imgLink = `https://gateway.pinata.cloud/ipfs/QmdNtjM6jSzMTbczjPpiv1TY4WugxM3CqxadiTHAtrAy9p/clone-${i}.jpg`
+    let imgLink = `https://cnd.mypinata.cloud/ipfs/QmdNtjM6jSzMTbczjPpiv1TY4WugxM3CqxadiTHAtrAy9p/clone-${i}.jpg`
     return imgLink
   }
 </script>
@@ -13,7 +13,7 @@
   {#if $signer !== null && $myCNDV2Balance !== 0}
     {#each $myCNDV2List as item}
       <div class="sub-list-item">
-        <!-- <img class="item-image" src="{imgApi(item)}" alt="img" /> -->
+        <img class="item-image" src="{imgApi(item)}" alt="img" />
         <div class="item-name">Token Id: {item}</div>
         <div class="item-name">Name: CxNxD #{item}</div>
       </div>
