@@ -4,8 +4,8 @@
   import { ethers } from 'ethers'
   import CNDV2abi from '@/data/abi/ClonesNeverDieV2.json'
 
-  const provider = new ethers.providers.JsonRpcProvider('https://dataseed.popcateum.org')
-  // const provider = new ethers.providers.JsonRpcProvider('https://rpc-mainnet.maticvigil.com/')
+  // const provider = new ethers.providers.JsonRpcProvider('https://dataseed.popcateum.org')
+  const provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
 
   let percent: any
   let percentWidth: any = `width: ${percent}%;`

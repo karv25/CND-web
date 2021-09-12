@@ -12,17 +12,17 @@ export const myAddressShort:any = writable(null)
 export const myBalance:any = writable(0)
 
 // CNDV2 contract
-export const CNDV2Contract = readable('0x5A6364E9CE2a60964b4015EBD412479Ae90e36Ba')
+export const CNDV2Contract = readable('0x6c15030A0055D7350c89EbbD460EB4F145462Fbd')
 export const CNDV2TotalSupply:any = writable(0)
 export const myCNDV2Balance:any = writable(0)
 export const myCNDV2List:any = writable([])
 
 // Nectar contract
-export const NectarContract = readable('0x77E483104609d357E6EC8bDdcaAD6C8c63691960')
+export const NectarContract = readable('0x662e0c208238Fc014429c8C4F28f82AaC6F59b9D')
 export const myNectarBalance:any = writable(0)
 
 // CNDV2Sale contract
-export const CNDV2SaleContract = readable('0xD2D9a58EC82489322beF54363C797a219B59C71B')
+export const CNDV2SaleContract = readable('0x841A63491027b3cffBDBC748AB98D8a7944eb197')
 
 
 // LotusStaking contract

@@ -6,7 +6,7 @@
   import { ethers } from 'ethers'
   import { onMount } from 'svelte'
 
-  const provider = new ethers.providers.JsonRpcProvider('https://dataseed.popcateum.org')
+  const provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
 
   let mintValue: any
   let payableMatic: any
