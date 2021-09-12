@@ -1,9 +1,24 @@
 <script lang="ts">
   import { onDestroy } from 'svelte'
   import { ethers } from 'ethers'
-  import { isConnect, myAddress, myAddressShort, myBalance, provider, signer } from '@/stores'
-import App from '@/App.svelte';
+  import {
+    isConnect,
+    myAddress,
+    myAddressShort,
+    myBalance,
+    provider,
+    signer,
+    NectarContract,
+    myNectarBalance,
+    CNDV2Contract,
+    myCNDV2Balance,
+    myCNDV2List
+  } from '@/stores'
+  import NectarAbi from '@/data/abi/Nectar.json'
+  import CNDV2Abi from '@/data/abi/ClonesNeverDieV2.json'
+
   const ethereum: any | undefined = (window as any).ethereum
+  let decimals = 1e18
 
   onDestroy(() => {
     $: if ($isConnect === true) {
@@ -38,7 +53,7 @@ import App from '@/App.svelte';
     //   params: [
     //     {
     //       chainId: '0x89',
-    //       chainName: 'Matic Mainnet',
+    //       chainName: 'Polygon Mainnet',
     //       nativeCurrency: {
     //         name: 'Matic',
     //         symbol: 'MATIC',
@@ -56,6 +71,8 @@ import App from '@/App.svelte';
     $signer = $provider.getSigner()
     await getAddress()
     await getBalance()
+    await getNectarBalance()
+    await getCNDV2Balance()
   }
 
   async function getAddress() {
@@ -71,13 +88,37 @@ import App from '@/App.svelte';
     ethereum.on('accountsChanged', async () => {
       await getAddress()
       await getBalance()
+      await getNectarBalance()
+      await getCNDV2Balance()
     })
   }
 
   async function connect() {
+    if (ethereum === undefined) {
+      alert('There is no Metamask. Please install Metamask.')
+      return false
+    }
     await addChain()
     requestAccount()
     changed()
+  }
+
+  async function getNectarBalance() {
+    const contract = await new ethers.Contract($NectarContract, NectarAbi, $signer)
+    let _myNectarBalance = await contract.balanceOf($myAddress)
+    $myNectarBalance = _myNectarBalance / decimals
+  }
+
+  async function getCNDV2Balance() {
+    let _myCNDV2List = []
+    const contract = await new ethers.Contract($CNDV2Contract, CNDV2Abi, $signer)
+    let _myCNDV2Balance = await contract.balanceOf($myAddress)
+    for (let i = 0; i < _myCNDV2Balance; i++) {
+      let tokenId = await contract.tokenOfOwnerByIndex($myAddress, i)
+      _myCNDV2List.push(tokenId)
+    }
+    $myCNDV2Balance = _myCNDV2Balance
+    $myCNDV2List = _myCNDV2List
   }
 </script>
 

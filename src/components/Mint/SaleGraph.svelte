@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { totalSupply, contractAddress } from '@/stores'
+  import { CNDV2TotalSupply, CNDV2Contract } from '@/stores'
   import { onMount } from 'svelte'
   import { ethers } from 'ethers'
-  import CNDV2Tabi from '@/data/abi/ClonesNeverDieV2Test.json'
+  import CNDV2abi from '@/data/abi/ClonesNeverDieV2.json'
 
   const provider = new ethers.providers.JsonRpcProvider('https://dataseed.popcateum.org')
   // const provider = new ethers.providers.JsonRpcProvider('https://rpc-mainnet.maticvigil.com/')
@@ -11,15 +11,15 @@
   let percentWidth: any = `width: ${percent}%;`
   $: percentWidth = `width: ${percent}%;`
 
-  $: percent = $totalSupply / 100
+  $: percent = $CNDV2TotalSupply / 100
   onMount(() => {
     getTotalSupply()
   })
 
   async function getTotalSupply() {
-    const contract = new ethers.Contract($contractAddress, CNDV2Tabi, provider)
-    $totalSupply = parseInt(await contract.totalSupply())
-    percent = $totalSupply / 100
+    const contract = new ethers.Contract($CNDV2Contract, CNDV2abi, provider)
+    $CNDV2TotalSupply = parseInt(await contract.totalSupply())
+    percent = $CNDV2TotalSupply / 100
   }
 </script>
 
@@ -30,7 +30,7 @@
 <div class="progressbar">
   <div class="in-progressbar" style="{percentWidth}">{percent}%</div>
 </div>
-<div class="amount">{$totalSupply} / 10000 Clones</div>
+<div class="amount">{$CNDV2TotalSupply} / 10000 Clones</div>
 
 <style lang="scss">
   .progressbar {

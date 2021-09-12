@@ -16,6 +16,7 @@
     <div class="mintbox">
       <SaleGraph />
     </div>
+    <a class="collection" href="https://polygonscan.com/" target="_blank">Going to OpenSea CxNxD 萬 collection</a>
   </div>
 </div>
 
@@ -33,6 +34,10 @@
     align-items: center;
   }
 
+  .collection {
+    font-size: 1rem;
+    color: $highlight-color;
+  }
   .mintbox {
     width: 55%;
     height: auto;
