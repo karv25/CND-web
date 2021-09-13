@@ -37,7 +37,7 @@
       txHash = data.transactionHash
     })
     mintValue = null
-    txHashLink = `https://explorer.popcateum.org/tx/${txHash}`
+    txHashLink = `https://polygonscan.com/tx/${txHash}`
     const ts = await contract.totalSupply()
     $CNDV2TotalSupply = ts
   }
