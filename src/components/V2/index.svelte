@@ -187,19 +187,24 @@
   }
 
   .youtube-frame {
-    width: 60%;
+    width: 100%;
     text-align: center;
     margin-bottom: 30px;
   }
   .youtube {
     width: 100%;
-    height: 300px;
+    height: 90vh;
   }
 
   @media screen and (max-width: 768px) {
     .youtube-frame {
       width: 100%;
       text-align: center;
+    }
+
+    .youtube {
+      width: 100%;
+      height: 200px;
     }
 
     .sub-content {
