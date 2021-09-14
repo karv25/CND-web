@@ -1,4 +1,18 @@
-<script></script>
+<script>
+  import { myLotusList } from '@/stores/index'
+  import LotusModal from './LotusModal.svelte'
+  let showModal = false
+
+  let lotusObj
+  function lotusDetail(obj) {
+    lotusObj = obj
+    openModal()
+    console.log(showModal)
+  }
+  function openModal() {
+    showModal = !showModal
+  }
+</script>
 
 <div class="sub-content">
   <div class="sub-title"><b>My Staking</b></div>
@@ -15,16 +29,19 @@
         </li>
       </ul>
       <ul class="sub-item-list-long">
-        <li class="list-item">
-          <div class="item-number">1</div>
-          <div class="item-number">100</div>
-          <div class="item-number">10000000000</div>
-          <div class="check-btn">Check</div>
-        </li>
+        {#each $myLotusList as item, index}
+          <li class="list-item">
+            <div class="item-number">{index + 1}</div>
+            <div class="item-number">{item.power}</div>
+            <div class="item-number">{item.PotentialNectar}</div>
+            <div class="check-btn" on:click="{lotusDetail(item)}">Check</div>
+          </li>
+        {/each}
       </ul>
     </div>
   </div>
 </div>
+<LotusModal showModal="{showModal}" lotusObj="{lotusObj}" on:click="{openModal}" />
 
 <style lang="scss">
   .sub-content {
@@ -40,7 +57,7 @@
 
   .sub-item {
     border: 2px solid $highlight-color;
-    height: auto;
+    height: 525px;
     box-sizing: border-box;
     border-radius: 10px;
   }

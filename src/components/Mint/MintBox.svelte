@@ -15,7 +15,7 @@
   let txHash: any
   let txHashLink: any
   let ccost: any
-  let checkIsSale: boolean
+  let checkIsSale: boolean = true
 
   $: $myAddress
   $: ccost = mintValue * 45

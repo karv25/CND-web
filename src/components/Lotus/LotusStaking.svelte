@@ -1,4 +1,90 @@
-<script lang="ts">
+<script>
+  import TxModal from '@/components/TxModal/index.svelte'
+  import { myCNDV2List, LotusContract, signer, CNDV2Contract, myAddress, myCNDV2Balance, myLotusList } from '@/stores'
+  import { ethers } from 'ethers'
+  import LotusABI from '@/data/abi/LotusStaking.json'
+  import CNDV2ABI from '@/data/abi/ClonesNeverDieV2.json'
+
+  let showModal = false
+  let txHash
+  let txHashLink
+  let checkedIds = []
+
+  async function goLotus() {
+    const contract = await new ethers.Contract($LotusContract, LotusABI, $signer)
+    const transaction = await contract.goLotus(checkedIds)
+    openModal()
+    await transaction.wait().then(data => {
+      txHash = data.transactionHash
+    })
+    checkedIds = []
+    txHashLink = `https://polygonscan.com/tx/${txHash}`
+  }
+
+  function cheked(num) {
+    if (checkedIds.includes(num)) {
+      let filteredId = checkedIds.filter(ids => {
+        return ids !== num
+      })
+      checkedIds = filteredId
+    } else {
+      checkedIds.push(num)
+      checkedIds = checkedIds
+    }
+  }
+
+  function checkmark(num) {
+    return checkedIds.includes(num)
+  }
+
+  async function getCNDV2Balance() {
+    let _myCNDV2List = []
+    const contract = await new ethers.Contract($CNDV2Contract, CNDV2ABI, $signer)
+    let _myCNDV2Balance = await contract.balanceOf($myAddress)
+    for (let i = 0; i < _myCNDV2Balance; i++) {
+      let tokenId = await contract.tokenOfOwnerByIndex($myAddress, i)
+      _myCNDV2List.push(tokenId)
+    }
+    $myCNDV2Balance = _myCNDV2Balance
+    $myCNDV2List = _myCNDV2List
+  }
+
+  async function getMyActivedLotusList() {
+    const contract = await new ethers.Contract($LotusContract, LotusABI, $signer)
+    let _myLotusList = await contract.myLotusList($myAddress)
+    let _myRealLotusList = []
+    for (let i = 0; i < _myLotusList.length; i++) {
+      let _myClonesListInLotus = []
+      let _lotuses = await contract.lotuses(_myLotusList[i])
+      let _lotusV2TokenIds = await contract.getLotusV2TokenId(_myLotusList[i])
+      let _potentialNectar = await contract.subsidyOf(_myLotusList[i])
+      if (_lotuses.owner !== '0x0000000000000000000000000000000000000000') {
+        for (let j = 0; j < _lotusV2TokenIds.length; j++) {
+          _myClonesListInLotus.push(parseInt(_lotusV2TokenIds[j]))
+        }
+        _myRealLotusList.push({
+          myRealLotusList: i,
+          myLotusId: parseInt(_myLotusList[i]._hex),
+          power: parseInt(_lotuses.power),
+          PotentialNectar: Math.floor(_potentialNectar / 1e18),
+          clonesList: _myClonesListInLotus
+        })
+      }
+    }
+    $myLotusList = _myRealLotusList
+  }
+
+  function openModal() {
+    showModal = !showModal
+  }
+
+  async function setModal() {
+    openModal()
+    await getCNDV2Balance()
+    await getMyActivedLotusList()
+    txHash = null
+    txHashLink = null
+  }
 </script>
 
 <div class="sub-content">
@@ -17,20 +103,54 @@
         </li>
       </ul>
       <ul class="sub-item-list">
-        <li class="list-item">
-          <input type="checkbox" name="asd" />
-          <div class="item-number">1</div>
-          <div class="item-name">CxNxD #0001</div>
-          <div class="item-id">1</div>
-        </li>
+        {#each $myCNDV2List as item, index}
+          <li class="list-item">
+            {#if checkedIds.includes(parseInt(item._hex)) === true}
+              <div class="checked" value="{parseInt(item._hex)}" on:click="{() => cheked(parseInt(item._hex))}"></div>
+            {:else}
+              <div class="check" value="{parseInt(item._hex)}" on:click="{() => cheked(parseInt(item._hex))}"></div>
+            {/if}
+            <div class="item-number">{index + 1}</div>
+            <div class="item-name">CxNxD #{item}</div>
+            <div class="item-id">{item}</div>
+          </li>
+        {/each}
       </ul>
-      <div class="sub-selected">Selected ID: 1, 2, 3, 4, 5</div>
-      <div class="sub-btn">Staking</div>
+      <div class="sub-selected">Selected ID: {checkedIds}</div>
+      <div class="sub-selected">Selected clones: {checkedIds.length}</div>
+      {#if checkedIds.length === 0}
+        <div class="sub-btn-non"><b>Staking</b></div>
+      {:else}
+        <div class="sub-btn" on:click="{goLotus}"><b>Staking</b></div>
+      {/if}
     </div>
   </div>
 </div>
 
+<TxModal showModal="{showModal}" txHash="{txHash}" txHashLink="{txHashLink}" on:click="{setModal}" />
+
 <style lang="scss">
+  .check {
+    width: 15px;
+    height: 15px;
+    background-color: lightgray;
+    cursor: pointer;
+  }
+  .checked {
+    width: 15px;
+    height: 15px;
+    background-color: $highlight-color;
+    cursor: pointer;
+  }
+  .sub-btn-non {
+    width: 100%;
+    background-color: lightgray;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
   .sub-content {
     width: 100%;
     margin-bottom: 40px;

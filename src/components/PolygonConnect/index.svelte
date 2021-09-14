@@ -12,16 +12,19 @@
     myNectarBalance,
     CNDV2Contract,
     myCNDV2Balance,
-    myCNDV2List
+    myCNDV2List,
+    LotusContract,
+    myLotusList
   } from '@/stores'
   import NectarAbi from '@/data/abi/Nectar.json'
   import CNDV2Abi from '@/data/abi/ClonesNeverDieV2.json'
+  import LotusABI from '@/data/abi/LotusStaking.json'
 
   const ethereum: any | undefined = (window as any).ethereum
   let decimals = 1e18
 
   onDestroy(() => {
-    $: if ($isConnect === true) {
+    if ($isConnect === true) {
       getInfo()
     }
   })
@@ -73,6 +76,7 @@
     await getBalance()
     await getNectarBalance()
     await getCNDV2Balance()
+    await getMyActivedLotusList()
   }
 
   async function getAddress() {
@@ -90,6 +94,7 @@
       await getBalance()
       await getNectarBalance()
       await getCNDV2Balance()
+      await getMyActivedLotusList()
     })
   }
 
@@ -101,6 +106,31 @@
     await addChain()
     requestAccount()
     changed()
+  }
+
+  async function getMyActivedLotusList() {
+    const contract = await new ethers.Contract($LotusContract, LotusABI, $signer)
+    let _myLotusList = await contract.myLotusList($myAddress)
+    let _myRealLotusList = []
+    for (let i = 0; i < _myLotusList.length; i++) {
+      let _myClonesListInLotus = []
+      let _lotuses = await contract.lotuses(_myLotusList[i])
+      let _lotusV2TokenIds = await contract.getLotusV2TokenId(_myLotusList[i])
+      let _potentialNectar = await contract.subsidyOf(_myLotusList[i])
+      if (_lotuses.owner !== '0x0000000000000000000000000000000000000000') {
+        for (let j = 0; j < _lotusV2TokenIds.length; j++) {
+          _myClonesListInLotus.push(parseInt(_lotusV2TokenIds[j]))
+        }
+        _myRealLotusList.push({
+          myRealLotusList: i, 
+          myLotusId: parseInt(_myLotusList[i]._hex),
+          power: parseInt(_lotuses.power),
+          PotentialNectar: Math.floor(_potentialNectar / 1e18),
+          clonesList: _myClonesListInLotus
+        })
+      }
+    }
+    $myLotusList = _myRealLotusList
   }
 
   async function getNectarBalance() {

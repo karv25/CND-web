@@ -26,4 +26,5 @@ export const CNDV2SaleContract = readable('0x841A63491027b3cffBDBC748AB98D8a7944
 
 
 // LotusStaking contract
-export const LotusContract = readable('0x5f01CaD80F668b832D5C12e227B78fA2A9c7c866')
+export const LotusContract = readable('0x4172DF61f6842870049FcD07b8E9FE6CEA7789EA')
+export const myLotusList:any = writable([])

@@ -10,6 +10,11 @@
         "internalType": "address",
         "name": "_nectar",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_genesisLotusOwner",
+        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -62,32 +67,7 @@
         "type": "uint256"
       }
     ],
-    "name": "BuyLotus",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "lotusId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "power",
-        "type": "uint256"
-      }
-    ],
-    "name": "ChangeLotus",
+    "name": "GoLotus",
     "type": "event"
   },
   {
@@ -131,7 +111,7 @@
         "type": "uint256"
       }
     ],
-    "name": "SellLotus",
+    "name": "OutLotus",
     "type": "event"
   },
   {
@@ -292,6 +272,44 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "_genesisLotus",
+        "type": "uint256"
+      }
+    ],
+    "name": "genesisLotusMine",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "lotusId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLotusV2TokenId",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256[]",
         "name": "myTokensId",
         "type": "uint256[]"
@@ -418,6 +436,19 @@
       }
     ],
     "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_genesisLotus",
+        "type": "uint256"
+      }
+    ],
+    "name": "outGenesisLotus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
