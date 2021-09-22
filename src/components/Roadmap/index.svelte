@@ -16,7 +16,7 @@
     {
       percent: '40%',
       img: '/assets/roadmap2.png',
-      description: "he story of the clones will be told in 10 comic. Only the holders will be able to watch it's comic!"
+      description: "History of the clones will be told in 10 comic. Only the holders will be able to watch it's comic!"
     },
     {
       percent: '60%',

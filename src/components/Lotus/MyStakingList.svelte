@@ -106,6 +106,7 @@
     background-color: $highlight-color;
     padding: 3px;
     border-radius: 3px;
+    cursor: pointer;
   }
   @media screen and (max-width: 768px) {
     .sub-item-wrap {

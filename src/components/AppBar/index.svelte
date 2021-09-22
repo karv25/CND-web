@@ -31,6 +31,7 @@
     <li><a href="/#/mint" on:click="{clickedToggleBtn}">Mint</a></li>
     <li><a href="/#/wallet" on:click="{clickedToggleBtn}">Wallet</a></li>
     <li><a href="/#/lotus" on:click="{clickedToggleBtn}">Lotus</a></li>
+    <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
   </ul>
 
   <ul class="{toggleBtnActive === false ? 'navbar_icons' : 'navbar_icons_active'}">

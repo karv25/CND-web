@@ -1,9 +1,5 @@
 <script lang="ts">
-
+  import About from '@/components/About/index.svelte'
 </script>
 
-<div>about</div>
-
-<style lang="scss">
-
-</style>
+<About />
