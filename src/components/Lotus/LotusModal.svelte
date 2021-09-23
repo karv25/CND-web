@@ -142,6 +142,16 @@
 
   .state-item {
     margin-bottom: 50px;
+    width: 400px;
+    overflow: scroll;
+    word-wrap: break-word;
+    height: 80px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .state-item::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
   }
 
   .modal_body {

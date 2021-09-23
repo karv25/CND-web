@@ -195,6 +195,12 @@
     padding: 10px;
     height: 200px;
     overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .sub-item-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
   }
 
   .sub-item-list-head {
