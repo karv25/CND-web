@@ -57,7 +57,7 @@
 
   .sub-item {
     border: 2px solid $highlight-color;
-    height: 525px;
+    height: 490px;
     box-sizing: border-box;
     border-radius: 10px;
   }
@@ -81,7 +81,7 @@
   }
 
   .sub-item-list-long {
-    height: 330px;
+    height: 300px;
     overflow: scroll;
     padding-left: 10px;
     padding-right: 10px;
@@ -113,6 +113,10 @@
     padding: 3px;
     border-radius: 3px;
     cursor: pointer;
+  }
+
+  .check-btn:active {
+    opacity: 0.7;
   }
   @media screen and (max-width: 768px) {
     .sub-item-wrap {

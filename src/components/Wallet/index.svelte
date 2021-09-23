@@ -66,6 +66,10 @@
     cursor: pointer;
   }
 
+  .connectBtn:active {
+    opacity: 0.7;
+  }
+
   .container-paragraph {
     width: 60%;
   }

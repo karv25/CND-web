@@ -91,6 +91,9 @@
     cursor: pointer;
   }
 
+  .connectBtn:active {
+    opacity: 0.7;
+  }
   .prepare {
     font-size: 2rem;
     color: $highlight-color;
@@ -132,12 +135,6 @@
   }
 
   @media screen and (max-width: 768px) {
-    .sub-frame {
-      width: 1000%;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-
     .sub-frame {
       width: 100%;
       padding: 0px;

@@ -107,12 +107,18 @@
 {#if showModal}
   <div class="modal">
     <div class="modal_body">
+      <div class="btn-wrap">
+        <div class="closeBtn" on:click>Close</div>
+      </div>
       <div class="sub-title"><b>My Lotus Info</b></div>
-      <div class="closeBtn" on:click>Close</div>
       <div class="state">
         <div class="state-item">Lotus ID: {lotusObj.myLotusId}</div>
         <div class="state-item">Potential Nectar: {lotusObj.PotentialNectar}</div>
-        <div class="state-item">My Clones ID: {lotusObj.clonesList}</div>
+        <div class="state-item">
+          My Clones ID: <div class="item-list">
+            {lotusObj.clonesList}
+          </div>
+        </div>
       </div>
       <div class="btn-list">
         <div class="btn" on:click="{nectarMine(lotusObj.myRealLotusList)}"><b>Nectar Mine</b></div>
@@ -142,15 +148,20 @@
 
   .state-item {
     margin-bottom: 50px;
-    width: 400px;
+  }
+
+  .item-list {
+    margin-bottom: 50px;
+    width: 90%;
+    margin: 10px;
     overflow: scroll;
     word-wrap: break-word;
-    height: 80px;
+    height: 100px;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
 
-  .state-item::-webkit-scrollbar {
+  .item-list::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
   }
 
@@ -186,23 +197,22 @@
     cursor: pointer;
   }
 
+  .btn:active {
+    opacity: 0.7;
+  }
+
   .btn-list {
     display: flex;
   }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: right;
+  }
   .closeBtn {
-    position: fixed;
     width: 50px;
-    height: 50px;
-    margin-left: 350px;
+    height: 20px;
     color: $highlight-color;
     cursor: pointer;
-  }
-  @media screen and (max-width: 768px) {
-    .closeBtn {
-      width: 50px;
-      height: 50px;
-      color: $highlight-color;
-      cursor: pointer;
-    }
   }
 </style>
