@@ -2,8 +2,9 @@
   import PConnect from '@/components/PolygonConnect/index.svelte'
   import LotusStaking from './LotusStaking.svelte'
   import MyStakingList from './MyStakingList.svelte'
+  import Statement from './Statement.svelte'
   import SaleGraph from '@/components/Mint/SaleGraph.svelte'
-  import { isConnect, myAddressShort, CNDV2TotalSupply, CNDV2Contract } from '@/stores'
+  import { isConnect, myAddressShort, CNDV2Contract } from '@/stores'
   import { onMount } from 'svelte'
   import { ethers } from 'ethers'
   import CNDV2ABI from '@/data/abi/ClonesNeverDieV2.json'
@@ -18,7 +19,6 @@
   async function getTotalSupply() {
     const contract = new ethers.Contract($CNDV2Contract, CNDV2ABI, provider)
     totalSupply = parseInt(await contract.totalSupply())
-    
   }
 </script>
 
@@ -45,6 +45,10 @@
           <PConnect />
         </div>
       {/if}
+    </div>
+
+    <div class="sub-big-frame">
+      <Statement />
     </div>
 
     {#if true}
@@ -121,6 +125,12 @@
     box-sizing: border-box;
   }
 
+  .sub-big-frame {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
   @media screen and (max-width: 768px) {
     .sub-frame {
       width: 1000%;
@@ -129,6 +139,11 @@
     }
 
     .sub-frame {
+      width: 100%;
+      padding: 0px;
+    }
+
+    .sub-big-frame {
       width: 100%;
       padding: 0px;
     }

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { CNDV2TotalSupply, CNDV2Contract } from '@/stores'
+  import { CNDV2TotalSupply, CNDV2Contract, publicPolygonRPC } from '@/stores'
   import { onMount } from 'svelte'
   import { ethers } from 'ethers'
   import CNDV2abi from '@/data/abi/ClonesNeverDieV2.json'
 
   // const provider = new ethers.providers.JsonRpcProvider('https://dataseed.popcateum.org')
-  const provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
+  const provider = new ethers.providers.JsonRpcProvider($publicPolygonRPC)
 
   let percent: any
   let percentWidth: any = `width: ${percent}%;`

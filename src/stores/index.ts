@@ -10,6 +10,7 @@ export const signer:any = writable(null)
 export const myAddress:any = writable(null)
 export const myAddressShort:any = writable(null)
 export const myBalance:any = writable(0)
+export const publicPolygonRPC:any = readable('https://polygon-rpc.com/')
 
 // CNDV2 contract
 export const CNDV2Contract = readable('0x6c15030A0055D7350c89EbbD460EB4F145462Fbd')
