@@ -28,6 +28,10 @@
       })
       checkedIds = filteredId
     } else {
+      if (checkedIds.length === 100) {
+        alert('There are 100 clones that can be steaked at once.')
+        return false
+      }
       checkedIds.push(num)
       checkedIds = checkedIds
     }
@@ -116,7 +120,7 @@
           </li>
         {/each}
       </ul>
-      <div class="sub-selected">Selected ID: {checkedIds}</div>
+      <!-- <div class="sub-selected">Selected ID: {checkedIds}</div> -->
       <div class="sub-selected">Selected clones: {checkedIds.length}</div>
       {#if checkedIds.length === 0}
         <div class="sub-btn-non"><b>Staking</b></div>
