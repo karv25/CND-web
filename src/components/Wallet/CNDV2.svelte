@@ -15,7 +15,7 @@
       <div class="sub-list-item">
         <img class="item-image" src="{imgApi(item)}" alt="img" />
         <div class="item-name">Token Id: {item}</div>
-        <div class="item-name">Name: CxNxD #{item}</div>
+        <div class="item-name">Name: CxNxD 萬 #{item}</div>
       </div>
     {/each}
   {:else}
