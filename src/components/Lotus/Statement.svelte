@@ -3,16 +3,19 @@
   import { LotusContract, publicPolygonRPC } from '@/stores'
   import LotusABI from '@/data/abi/LotusStaking.json'
   import { onMount } from 'svelte'
+  import axios from 'axios'
 
   const provider = new ethers.providers.JsonRpcProvider($publicPolygonRPC)
   let clones: any = '-'
   let clonePerBlockNectars: any = '-'
   let totalNectar: any = '-'
-  let ownersList: any = []
-  let ownersLength: number = 0
+  let ownersLength: any = '-'
 
   onMount(() => {
-    getOwners()
+    axios.get('http://api.clonesneverdie.com/lotus/owners').then(response => {
+      ownersLength = response.data.owners
+      console.log(response.data)
+    })
     getTotalNectar()
     lotusStatement()
   })
@@ -23,21 +26,21 @@
     let _totalNectar = (currentPolygonBlock - lotusGenesisBlock) * 10
     totalNectar = convert(_totalNectar)
   }
-  async function getOwners() {
-    const contract = new ethers.Contract($LotusContract, LotusABI, provider)
-    const lotusCount = await contract.lotusCount()
-    for (let i = 1; i < lotusCount; i++) {
-      let arr = await contract.lotuses(i)
-      if (arr[0] === '0x0000000000000000000000000000000000000000') {
-        continue
-      }
-      if (!ownersList.includes(arr[0])) {
-        ownersLength += 1
-        ownersList.push(arr[0])
-      }
-    }
-    ownersLength = ownersLength
-  }
+  // async function getOwners() {
+  //   const contract = new ethers.Contract($LotusContract, LotusABI, provider)
+  //   const lotusCount = await contract.lotusCount()
+  //   for (let i = 1; i < lotusCount; i++) {
+  //     let arr = await contract.lotuses(i)
+  //     if (arr[0] === '0x0000000000000000000000000000000000000000') {
+  //       continue
+  //     }
+  //     if (!ownersList.includes(arr[0])) {
+  //       ownersLength += 1
+  //       ownersList.push(arr[0])
+  //     }
+  //   }
+  //   ownersLength = ownersLength
+  // }
   async function lotusStatement() {
     const contract = new ethers.Contract($LotusContract, LotusABI, provider)
     const totalPower = await contract.totalPower()
@@ -74,7 +77,12 @@
     </div>
     <div class="sub-item-wrap">
       <div class="sub-item-title"><b>Clone / per block</b></div>
-      <div class="sub-item-explain">{clonePerBlockNectars} <div class="unit">$Nectar</div></div>
+      <div class="sub-item-explain">
+        <div class="unit">
+          {clonePerBlockNectars}
+        </div>
+        <div class="unit2">$Nectar</div>
+      </div>
     </div>
     <div class="sub-item-wrap">
       <div class="sub-item-title"><b>Total Nectar</b></div>
@@ -127,6 +135,11 @@
 
   .unit {
     display: inline;
+    /* font-size: 1rem; */
+  }
+
+  .unit2 {
+    display: inline;
     font-size: 1rem;
   }
 
@@ -157,6 +170,16 @@
       align-items: center;
       margin-bottom: 10px;
       margin-top: 10px;
+    }
+
+    .unit {
+      display: inline;
+      font-size: 1.2rem;
+    }
+
+    .unit2 {
+      display: inline;
+      font-size: 1.1rem;
     }
   }
 </style>

@@ -62,6 +62,7 @@
     "@fortawesome/free-brands-svg-icons": "5.15.4",
     "@fortawesome/free-solid-svg-icons": "5.15.4",
     "@okrad/svelte-progressbar": "1.11.2",
+    "axios": "0.21.4",
     "sirv-cli": "^1.0.0",
     "svelte-fa": "2.2.1",
     "svelte-spa-router": "3.2.0"
