@@ -5,7 +5,7 @@
   let lotusList = []
 
   onMount(() => {
-    axios.get('http://api.clonesneverdie.com/lotus/list').then(response => {
+    axios.get('https://api.clonesneverdie.com/lotus/list').then(response => {
       lotusList = response.data
     })
   })

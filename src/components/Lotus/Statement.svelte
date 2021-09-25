@@ -12,7 +12,7 @@
   let ownersLength: any = '-'
 
   onMount(() => {
-    axios.get('http://api.clonesneverdie.com/lotus/owners').then(response => {
+    axios.get('https://api.clonesneverdie.com/lotus/owners').then(response => {
       ownersLength = response.data.owners
       console.log(response.data)
     })
