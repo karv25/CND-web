@@ -108,16 +108,6 @@
     font-size: 1rem;
   }
 
-  .check-btn {
-    background-color: $highlight-color;
-    padding: 3px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-
-  .check-btn:active {
-    opacity: 0.7;
-  }
   @media screen and (max-width: 768px) {
     .sub-item-wrap {
       padding: 15px;

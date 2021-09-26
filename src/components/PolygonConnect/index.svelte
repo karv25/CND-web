@@ -14,7 +14,9 @@
     myCNDV2Balance,
     myCNDV2List,
     LotusContract,
-    myLotusList
+    myLotusList,
+    walletLoading,
+    lotusLoading
   } from '@/stores'
   import NectarAbi from '@/data/abi/Nectar.json'
   import CNDV2Abi from '@/data/abi/ClonesNeverDieV2.json'
@@ -72,6 +74,7 @@
   async function getInfo() {
     $provider = new ethers.providers.Web3Provider(ethereum)
     $signer = $provider.getSigner()
+    loadingFalse()
     await getAddress()
     await getBalance()
     await getNectarBalance()
@@ -90,6 +93,7 @@
 
   function changed() {
     ethereum.on('accountsChanged', async () => {
+      loadingFalse()
       await getAddress()
       await getBalance()
       await getNectarBalance()
@@ -108,6 +112,11 @@
     changed()
   }
 
+  function loadingFalse() {
+    $lotusLoading = false
+    $walletLoading = false
+  }
+
   async function getMyActivedLotusList() {
     const contract = await new ethers.Contract($LotusContract, LotusABI, $signer)
     let _myLotusList = await contract.myLotusList($myAddress)
@@ -122,7 +131,7 @@
           _myClonesListInLotus.push(parseInt(_lotusV2TokenIds[j]))
         }
         _myRealLotusList.push({
-          myRealLotusList: i, 
+          myRealLotusList: i,
           myLotusId: parseInt(_myLotusList[i]._hex),
           power: parseInt(_lotuses.power),
           PotentialNectar: Math.floor(_potentialNectar / 1e18),
@@ -131,6 +140,7 @@
       }
     }
     $myLotusList = _myRealLotusList
+    $lotusLoading = true
   }
 
   async function getNectarBalance() {
@@ -149,6 +159,7 @@
     }
     $myCNDV2Balance = _myCNDV2Balance
     $myCNDV2List = _myCNDV2List
+    $walletLoading = true
   }
 </script>
 

@@ -1,6 +1,8 @@
 <script>
-  import { myLotusList } from '@/stores/index'
+  import { lotusLoading, myLotusList } from '@/stores/index'
   import LotusModal from './LotusModal.svelte'
+  import { RingLoader } from 'svelte-loading-spinners'
+
   let showModal = false
 
   let lotusObj
@@ -37,6 +39,11 @@
             <div class="check-btn" on:click="{lotusDetail(item)}">Check</div>
           </li>
         {/each}
+        {#if $lotusLoading === false}
+          <div class="loading">
+            <RingLoader size="60" color="#FF7F00" unit="px" duration="1s" />
+          </div>
+        {/if}
       </ul>
     </div>
   </div>

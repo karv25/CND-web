@@ -2,6 +2,7 @@
   export let showModal: boolean
   export let txHash: any
   export let txHashLink: any
+  import { RingLoader } from 'svelte-loading-spinners'
 </script>
 
 {#if showModal}
@@ -17,7 +18,15 @@
         <div class="button" on:click><b>Confirm</b></div>
       {:else}
         <div class="state">
+          <div class="loading">
+            <RingLoader size="60" color="#FF7F00" unit="px" duration="1s" />
+          </div>
+          <br />
           <div>Please wait a moment...</div>
+          <!-- <div class="state">
+            <div class="small-title">Transaction hash</div>
+            <a class="txHash" href="{txHashLink}" target="_blank">{txHash.slice(0, 25)}...</a>
+          </div> -->
         </div>
         <div class="wait"><b>Wait</b></div>
       {/if}

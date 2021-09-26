@@ -1,7 +1,17 @@
 <script>
   import TxModal from '@/components/TxModal/index.svelte'
-  import { myCNDV2List, LotusContract, signer, CNDV2Contract, myAddress, myCNDV2Balance, myLotusList } from '@/stores'
+  import {
+    myCNDV2List,
+    LotusContract,
+    signer,
+    CNDV2Contract,
+    myAddress,
+    myCNDV2Balance,
+    myLotusList,
+    walletLoading
+  } from '@/stores'
   import { ethers } from 'ethers'
+  import { RingLoader } from 'svelte-loading-spinners'
   import LotusABI from '@/data/abi/LotusStaking.json'
   import CNDV2ABI from '@/data/abi/ClonesNeverDieV2.json'
 
@@ -37,11 +47,8 @@
     }
   }
 
-  function checkmark(num) {
-    return checkedIds.includes(num)
-  }
-
   async function getCNDV2Balance() {
+    $walletLoading = false
     let _myCNDV2List = []
     const contract = await new ethers.Contract($CNDV2Contract, CNDV2ABI, $signer)
     let _myCNDV2Balance = await contract.balanceOf($myAddress)
@@ -51,6 +58,7 @@
     }
     $myCNDV2Balance = _myCNDV2Balance
     $myCNDV2List = _myCNDV2List
+    $walletLoading = true
   }
 
   async function getMyActivedLotusList() {
@@ -102,8 +110,8 @@
         <li class="list-item">
           <div class="item-number">Select</div>
           <div class="item-number">No.</div>
-          <div class="item-name">Name</div>
-          <div class="item-id">Token ID</div>
+          <div class="item-name">Clone Name</div>
+          <div class="item-id">Clone ID</div>
         </li>
       </ul>
       <ul class="sub-item-list">
@@ -115,11 +123,17 @@
               <div class="check" value="{parseInt(item._hex)}" on:click="{() => cheked(parseInt(item._hex))}"></div>
             {/if}
             <div class="item-number">{index + 1}</div>
-            <div class="item-name">CxNxD #{item}</div>
+            <div class="item-name">CxNxD 萬 #{item}</div>
             <div class="item-id">{item}</div>
           </li>
         {/each}
+        {#if $walletLoading === false}
+          <div class="loading">
+            <RingLoader size="60" color="#FF7F00" unit="px" duration="1s" />
+          </div>
+        {/if}
       </ul>
+
       <!-- <div class="sub-selected">Selected ID: {checkedIds}</div> -->
       <div class="sub-selected">Selected clones: {checkedIds.length}</div>
       {#if checkedIds.length === 0}

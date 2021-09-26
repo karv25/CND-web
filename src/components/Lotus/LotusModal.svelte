@@ -15,7 +15,9 @@
     myCNDV2Balance,
     myCNDV2List,
     NectarContract,
-    myNectarBalance
+    myNectarBalance,
+    lotusLoading,
+    walletLoading
   } from '@/stores'
   import { ethers } from 'ethers'
   import LotusABI from '@/data/abi/LotusStaking.json'
@@ -30,6 +32,7 @@
     openModal()
     await transaction.wait().then(data => {
       txHash = data.transactionHash
+      txHashLink = `https://polygonscan.com/tx/${txHash}`
     })
   }
 
@@ -39,6 +42,7 @@
     openModal()
     await transaction.wait().then(data => {
       txHash = data.transactionHash
+      txHashLink = `https://polygonscan.com/tx/${txHash}`
     })
   }
 
@@ -65,6 +69,7 @@
       }
     }
     $myLotusList = _myRealLotusList
+    $lotusLoading = true
   }
 
   async function getCNDV2Balance() {
@@ -77,6 +82,7 @@
     }
     $myCNDV2Balance = _myCNDV2Balance
     $myCNDV2List = _myCNDV2List
+    $walletLoading = true
   }
 
   async function getNectarBalance() {
@@ -93,7 +99,13 @@
     showModal = !showModal
   }
 
+  function loadingFalse() {
+    $lotusLoading = false
+    $walletLoading = false
+  }
+
   async function setModal() {
+    loadingFalse()
     openModal()
     closeModal()
     await getNectarBalance()

@@ -7,14 +7,13 @@
 
   const provider = new ethers.providers.JsonRpcProvider($publicPolygonRPC)
   let clones: any = '-'
-  let clonePerBlockNectars: any = '-'
   let totalNectar: any = '-'
   let ownersLength: any = '-'
+  let clonePerBlockNectars: any = '-'
 
   onMount(() => {
     axios.get('https://api.clonesneverdie.com/lotus/owners').then(response => {
       ownersLength = response.data.owners
-      console.log(response.data)
     })
     getTotalNectar()
     lotusStatement()

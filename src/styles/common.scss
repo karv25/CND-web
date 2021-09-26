@@ -42,3 +42,9 @@ a {
 .link-style{
   color: $highlight-color;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

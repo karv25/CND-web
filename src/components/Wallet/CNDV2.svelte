@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { myCNDV2Balance, myCNDV2List, signer } from '@/stores'
+  import { myCNDV2Balance, myCNDV2List, signer, walletLoading } from '@/stores'
+  import { RingLoader } from 'svelte-loading-spinners'
 
   function imgApi(i: any) {
     let imgLink = `https://cnd.mypinata.cloud/ipfs/QmdNtjM6jSzMTbczjPpiv1TY4WugxM3CqxadiTHAtrAy9p/clone-${i}.jpg`
@@ -10,7 +11,7 @@
 <div class="sub-title"><b>CxNxD 萬</b></div>
 <div class="sub-item">My Clones: {$myCNDV2Balance}</div>
 <div class="sub-list">
-  {#if $signer !== null && $myCNDV2Balance !== 0}
+  {#if $signer !== null && $myCNDV2Balance !== 0 && $walletLoading === true}
     {#each $myCNDV2List as item}
       <div class="sub-list-item">
         <img class="item-image" src="{imgApi(item)}" alt="img" />
@@ -18,6 +19,10 @@
         <div class="item-name">Name: CxNxD 萬 #{item}</div>
       </div>
     {/each}
+  {:else if $walletLoading === false}
+    <div class="loading">
+      <RingLoader size="60" color="#FF7F00" unit="px" duration="1s" />
+    </div>
   {:else}
     <div class="announcement">Please connect your wallet</div>
   {/if}

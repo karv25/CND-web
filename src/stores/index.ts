@@ -17,10 +17,12 @@ export const CNDV2Contract = readable('0x6c15030A0055D7350c89EbbD460EB4F145462Fb
 export const CNDV2TotalSupply:any = writable(0)
 export const myCNDV2Balance:any = writable(0)
 export const myCNDV2List:any = writable([])
+export const walletLoading:any = writable(true)
 
 // Nectar contract
 export const NectarContract = readable('0x662e0c208238Fc014429c8C4F28f82AaC6F59b9D')
 export const myNectarBalance:any = writable(0)
+export const lotusLoading:any = writable(true)
 
 // CNDV2Sale contract
 export const CNDV2SaleContract = readable('0x841A63491027b3cffBDBC748AB98D8a7944eb197')

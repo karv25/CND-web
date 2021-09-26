@@ -52,6 +52,7 @@
     "svelte": "3.42.1",
     "svelte-check": "^2.0.0",
     "svelte-loader": "3.1.2",
+    "svelte-loading-spinners": "0.1.7",
     "svelte-preprocess": "^4.0.0",
     "svelte-scrollto": "0.2.0",
     "ts-node": "10.2.1",
