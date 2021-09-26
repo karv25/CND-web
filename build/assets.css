@@ -39,3 +39,9 @@ a {
 .link-style {
   color: #FF7F00;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
