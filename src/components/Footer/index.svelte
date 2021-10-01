@@ -21,6 +21,9 @@
       <div class="notice-content">
         copyrightⓒ 2021 All rights reserved by Clones Never Die.
         <br />
+        Clone Never Die NFT does not include a license. The Clone Never Die license is entirely owned by the CND dev team
+        (2ssul, Team Leader).
+        <br />
         If you use a picture without permission, you can be legally punished.
       </div>
     </div>

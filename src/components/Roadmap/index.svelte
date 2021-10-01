@@ -43,6 +43,10 @@
     <div class="sub-content">
       <div class="sub-content-paragraph">
         We will implement each CxNxD 萬 roadmap item at various milestones, based on the sales performance.
+        <br />
+        We are doing this for the long term. We had set some goals for ourselves.
+        <br />
+        When the target sales rate is reached, we will start working to realize the stated target.
       </div>
     </div>
     {#each roadmapData as item}
@@ -71,7 +75,7 @@
   }
 
   .sub-content-paragraph {
-    width: 35%;
+    width: 100%;
   }
 
   .mobile-occupy {

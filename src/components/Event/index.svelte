@@ -11,7 +11,7 @@
 
   const eventData: Array<EContent> = [
     {
-      progress: true,
+      progress: false,
       name: 'Original Holder Event',
       description: 'We airdrop CxNxD 萬 clone to the wallet address holding the CxNxD original until September 13th. ',
       img: '/assets/event1.jpeg',

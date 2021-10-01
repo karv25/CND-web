@@ -12,7 +12,7 @@
     {#if progress}
       <div class="event-mark">Progressing</div>
     {:else}
-      <div class="event-mark">Event End</div>
+      <div class="end-event-mark">Event End</div>
     {/if}
     <div class="event-title">{name}</div>
     <div class="event-content">
@@ -40,6 +40,16 @@
     width: fit-content;
     padding: 3px;
     background-color: $highlight-color;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+  }
+
+  .end-event-mark {
+    width: fit-content;
+    padding: 3px;
+    background-color: lightgray;
+    color: black;
     border-radius: 3px;
     margin-bottom: 20px;
     font-size: 0.8rem;
