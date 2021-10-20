@@ -68,7 +68,7 @@
       ToonImage: '/assets/toon1/21.png'
     },
     {
-      ToonImage: '/assets/toon1/21.png'
+      ToonImage: '/assets/toon1/22.png'
     },
     {
       ToonImage: '/assets/toon1/23.png'
