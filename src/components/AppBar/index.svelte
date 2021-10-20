@@ -22,15 +22,16 @@
 
 <nav class="navbar">
   <div class="navbar_logo">
-    <img class="logo-img" src="/assets/appbar_logo.png" alt="mainlogo" />
+    <a href="/#/">
+      <img class="logo-img" src="/assets/appbar_logo.png" alt="mainlogo" />
+    </a>
   </div>
 
   <ul class="{toggleBtnActive === false ? 'navbar_menu' : 'navbar_menu_active'}">
-    <li><a href="/#/" on:click="{clickedToggleBtn}">Home</a></li>
-    <!-- <li><div on:click="{toMint}">Mint</div></li> -->
     <li><a href="/#/mint" on:click="{clickedToggleBtn}">Mint</a></li>
     <li><a href="/#/wallet" on:click="{clickedToggleBtn}">Wallet</a></li>
     <li><a href="/#/lotus" on:click="{clickedToggleBtn}">Lotus</a></li>
+    <li><a href="/#/comics" on:click="{clickedToggleBtn}">Comics</a></li>
     <li><a href="/#/about" on:click="{clickedToggleBtn}">About</a></li>
   </ul>
 
