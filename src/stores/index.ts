@@ -20,7 +20,7 @@ export const myCNDV2List:any = writable([])
 export const walletLoading:any = writable(true)
 
 // Nectar contract
-export const NectarContract = readable('0x4d61A1436B841bc9e5860909225aa3eAfBACC4b2')
+export const NectarContract = readable('0x662e0c208238Fc014429c8C4F28f82AaC6F59b9D')
 export const myNectarBalance:any = writable(0)
 export const lotusLoading:any = writable(true)
 
@@ -33,5 +33,5 @@ export const LotusContract = readable('0x4172DF61f6842870049FcD07b8E9FE6CEA7789E
 export const myLotusList:any = writable([])
 
 // AssetLottery contract
-export const AssetLotteryContract = readable('0x04A9FB2d82CC3AEBEb265c49D8826a21b3e5C3CA')
+export const AssetLotteryContract = readable('0x4608606B5E1912cC936B0fa0ff56802B5271c74a')
 export const saleCount:any = writable(0)
