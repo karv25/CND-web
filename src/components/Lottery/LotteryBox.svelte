@@ -127,7 +127,7 @@
       {#if successMessage}
         <div class="progress-text">Success: The transaction success. Please check the assets at OpenSea!</div>
       {/if}
-      {#if $isConnect && $myNectarBalance >= lotteryValue && progressState === false && $saleCount !== 300}
+      {#if $isConnect && $myNectarBalance >= lotteryValue && progressState === false && $saleCount !== 300 && checkIsSale}
         <div class="subbtn" on:click="{pullUp}">
           <b> PULL UP </b>
         </div>
