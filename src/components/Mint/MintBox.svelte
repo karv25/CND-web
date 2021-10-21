@@ -75,7 +75,7 @@
       <div class="subtitle"><b>Your Address</b></div>
       <input type="text" readonly value="{$myAddress}" disabled="{!$isConnect}" />
       <div class="subtitle"><b>Number of mint limit (1-20)</b></div>
-      <input type="number" bind:value="{mintValue}" disabled="{!$isConnect}" on:input="{onInputCheck}" />
+      <input type="number" readonly bind:value="{mintValue}" disabled="{!$isConnect}" on:input="{onInputCheck}" />
       <div class="subcontent">Notice: 1 Clone = 45 MATIC</div>
       <div class="subcontent">
         Your MATIC balance: {$myBalance}

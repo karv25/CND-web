@@ -101,11 +101,11 @@
   <div class="container-title">Comics</div>
   <div class="container-content">
     <div class="container-paragraph">There is Comics about CxNxD here. Check out about CxNxD!</div>
-    {#each toonData as data}
-      <div class="toonTool">
-        <img class="toonTool" src="{data.ToonImage}" alt="img" />
-      </div>
-    {/each}
+    <div class="toonTool">
+      {#each toonData as data}
+        <img class="toonImg" src="{data.ToonImage}" alt="img" />
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -126,11 +126,25 @@
   }
 
   .toonTool {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+  }
+
+  .toonImg {
+    display: flex;
+    width: 60%;
   }
 
   @media screen and (max-width: 768px) {
     .container-paragraph {
+      align-items: center;
+      width: 100%;
+    }
+
+    .toonImg {
       width: 100%;
     }
   }
